@@ -24,7 +24,7 @@ public class Utilisateur {
 	}
 
 	public Utilisateur(int noUtilisateur, String pseudo, String nom, String prenom, String email, int telephone,
-			String rue, int codePostal, String ville, String motDepasse, int credit, String administrateur,
+			String rue, int codePostal, String ville, String motDePasse, int credit, String administrateur,
 			ArticleVendu articleVendu) {
 		this.noUtilisateur = noUtilisateur;
 		this.pseudo = pseudo;
@@ -35,7 +35,7 @@ public class Utilisateur {
 		this.rue = rue;
 		this.codePostal = codePostal;
 		this.ville = ville;
-		this.motDePasse = motDepasse;
+		this.motDePasse = motDePasse;
 		this.credit = credit;
 		this.administrateur = administrateur;
 		this.articleVendu = articleVendu;
@@ -113,12 +113,12 @@ public class Utilisateur {
 		this.ville = ville;
 	}
 
-	public String getMotDepasse() {
+	public String getMotDePasse() {
 		return motDePasse;
 	}
 
-	public void setMotDepasse(String motDepasse) {
-		this.motDePasse = motDepasse;
+	public void setMotDePasse(String motDePasse) {
+		this.motDePasse = motDePasse;
 	}
 
 	public int getCredit() {
@@ -149,7 +149,7 @@ public class Utilisateur {
 	public String toString() {
 		return "Utilisateur [noUtilisateur=" + noUtilisateur + ", pseudo=" + pseudo + ", nom=" + nom + ", prenom="
 				+ prenom + ", email=" + email + ", telephone=" + telephone + ", rue=" + rue + ", codePostal="
-				+ codePostal + ", ville=" + ville + ", motDepasse=" + motDePasse + ", credit=" + credit
+				+ codePostal + ", ville=" + ville + ", motDePasse=" + motDePasse + ", credit=" + credit
 				+ ", administrateur=" + administrateur + ", articleVendu=" + articleVendu + "]";
 	}
 	
