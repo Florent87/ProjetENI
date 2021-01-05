@@ -6,16 +6,15 @@ public class Retrait {
 	private int codePostal;
 	private String Ville;
 	
+	public Retrait() {
+	}
+	
 	public Retrait(String rue, int codePostal, String ville) {
-		super();
 		this.rue = rue;
 		this.codePostal = codePostal;
-		Ville = ville;
+		this.Ville = ville;
 	}
 
-	public Retrait() {
-		super();
-	}
 
 	public String getRue() {
 		return rue;

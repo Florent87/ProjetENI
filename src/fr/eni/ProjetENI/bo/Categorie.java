@@ -3,15 +3,16 @@ package fr.eni.ProjetENI.bo;
 public class Categorie {
 	
 	public int noCategorie;
-	public String libelle;
+	public String libelle;	
 	
-	
+	public Categorie() {
+	}
+
 	public Categorie(int noCategorie, String libelle) {
 		super();
 		this.noCategorie = noCategorie;
 		this.libelle = libelle;
 	}
-
 	
     public int getNoCategorie() {
 		return noCategorie;

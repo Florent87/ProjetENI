@@ -20,11 +20,12 @@ public class Utilisateur {
 	
 	private ArticleVendu articleVendu;
 	
+	public Utilisateur() {
+	}
 
 	public Utilisateur(int noUtilisateur, String pseudo, String nom, String prenom, String email, int telephone,
 			String rue, int codePostal, String ville, String motDepasse, int credit, String administrateur,
 			ArticleVendu articleVendu) {
-		super();
 		this.noUtilisateur = noUtilisateur;
 		this.pseudo = pseudo;
 		this.nom = nom;
@@ -136,12 +137,6 @@ public class Utilisateur {
 		this.administrateur = administrateur;
 	}
 
-	public Utilisateur() {
-		super();
-	}
-
-	
-
 	public ArticleVendu getArticleVendu() {
 		return articleVendu;
 	}
@@ -157,7 +152,6 @@ public class Utilisateur {
 				+ codePostal + ", ville=" + ville + ", motDepasse=" + motDepasse + ", credit=" + credit
 				+ ", administrateur=" + administrateur + ", articleVendu=" + articleVendu + "]";
 	}
-
 	
 }
 

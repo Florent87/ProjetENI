@@ -6,16 +6,16 @@ import java.time.LocalDate;
 public class Encheres {
 	
 	public LocalDate dateEnchere;
-	public int montantEnchere;
+	public int montantEnchere;	
 	
-	
+	public Encheres() {
+	}
+
 	public Encheres(LocalDate dateEnchere, int montantEnchere) {
 		super();
 		this.dateEnchere = dateEnchere;
 		this.montantEnchere = montantEnchere;
 	}
-	
-	
 	
 	public LocalDate getDateEnchere() {
 		return dateEnchere;
