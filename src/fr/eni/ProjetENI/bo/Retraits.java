@@ -1,15 +1,15 @@
 package fr.eni.ProjetENI.bo;
 
-public class Retrait {
+public class Retraits {
 	
 	private String rue;
 	private int codePostal;
 	private String Ville;
 	
-	public Retrait() {
+	public Retraits() {
 	}
 	
-	public Retrait(String rue, int codePostal, String ville) {
+	public Retraits(String rue, int codePostal, String ville) {
 		this.rue = rue;
 		this.codePostal = codePostal;
 		this.Ville = ville;
