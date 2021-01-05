@@ -24,7 +24,7 @@
                 </div>
 <div class="form-field">
                 <select id="fld-categorie" size="1" class="fld-field">
-			    <optcategorie label="Toutes:">
+			    <optgroup label="Toutes:">
 				<option>Informatique</option>
 				<option>Ameublement</option>
 				<option>Vêtement</option>
