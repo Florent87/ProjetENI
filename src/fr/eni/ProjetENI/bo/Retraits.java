@@ -42,7 +42,7 @@ public class Retraits {
 
 	@Override
 	public String toString() {
-		return "Retrait [rue=" + rue + ", codePostal=" + codePostal + ", Ville=" + Ville + "]";
+		return "Retraits [rue=" + rue + ", codePostal=" + codePostal + ", Ville=" + Ville + "]";
 	}
 
 	
