@@ -14,7 +14,7 @@ public class Utilisateur {
 	private String rue;
 	private int codePostal;
 	private String ville;
-	private String motDepasse;
+	private String motDePasse;
 	private int credit;
 	private String administrateur;
 	
@@ -35,7 +35,7 @@ public class Utilisateur {
 		this.rue = rue;
 		this.codePostal = codePostal;
 		this.ville = ville;
-		this.motDepasse = motDepasse;
+		this.motDePasse = motDepasse;
 		this.credit = credit;
 		this.administrateur = administrateur;
 		this.articleVendu = articleVendu;
@@ -114,11 +114,11 @@ public class Utilisateur {
 	}
 
 	public String getMotDepasse() {
-		return motDepasse;
+		return motDePasse;
 	}
 
 	public void setMotDepasse(String motDepasse) {
-		this.motDepasse = motDepasse;
+		this.motDePasse = motDepasse;
 	}
 
 	public int getCredit() {
@@ -149,7 +149,7 @@ public class Utilisateur {
 	public String toString() {
 		return "Utilisateur [noUtilisateur=" + noUtilisateur + ", pseudo=" + pseudo + ", nom=" + nom + ", prenom="
 				+ prenom + ", email=" + email + ", telephone=" + telephone + ", rue=" + rue + ", codePostal="
-				+ codePostal + ", ville=" + ville + ", motDepasse=" + motDepasse + ", credit=" + credit
+				+ codePostal + ", ville=" + ville + ", motDepasse=" + motDePasse + ", credit=" + credit
 				+ ", administrateur=" + administrateur + ", articleVendu=" + articleVendu + "]";
 	}
 	
