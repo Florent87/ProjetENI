@@ -9,33 +9,6 @@
 <div>ENI-ENCHERES</div>
 
 <body>
-<%
-		Avis avis = (Avis)request.getAttribute("avis");
-		if(avis!=null)
-		{
-	%>
-			<p style="color:red;">L'avis a été ajouté avec succès :</p>
-			<p><%=avis %></p>
-	<%	
-		} 
-	%>
-	
-	<%
-		List<Integer> listeCodesErreur = (List<Integer>)request.getAttribute("listeCodesErreur");
-		if(listeCodesErreur!=null)
-		{
-	%>
-			<p style="color:red;">Erreur, l'avis n'a pas pu être ajouté :</p>
-	<%
-			for(int codeErreur:listeCodesErreur)
-			{
-	%>
-				<p><%=LecteurMessage.getMessageErreur(codeErreur)%></p>
-	<%	
-			}
-		}
-	%>
-
 
 <h1>Mon profil</h1>
 
@@ -47,7 +20,7 @@
 			<input type="text" name="pseudo" id="pseudo" value="<%=listeCodesErreur!=null?request.getParameter("pseudo"):""%>"required/>/>
 
 			<label for="nom">Nom :</label>
-			<input type="text" name="nom" id="nom" value="<%=listeCodesErreur!=null?request.getParameter("nom"):""%>"required/> required/>
+			<input type="text" name="nom" id="nom" value="<%=listeCodesErreur!=null?request.getParameter("nom"):""%>"required/>
 		</div>
 	</p>
 	
@@ -95,7 +68,7 @@
 		<div>
 			<input type="submit" value="Créer"/>
 
-			<input type="button" value="Annuler" onclick='location.href="ListeEncheres.jsp"'/>
+			<input type="button" value="Annuler" onclick='location.href="Index.jsp"'/>
 		</div>
 	</p>
 		
