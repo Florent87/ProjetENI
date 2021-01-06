@@ -15,6 +15,7 @@ public class Utilisateur {
 	private int codePostal;
 	private String ville;
 	private String motDePasse;
+	private int confirmation;
 	private int credit;
 	private String administrateur;
 	
@@ -39,6 +40,29 @@ public class Utilisateur {
 		this.credit = credit;
 		this.administrateur = administrateur;
 		this.articleVendu = articleVendu;
+	}
+	
+	
+
+	public Utilisateur(String pseudo, String nom, String prenom, String email, int telephone, String rue,
+			int codePostal, String ville, String motDePasse, int confirmation) {
+		super();
+		this.pseudo = pseudo;
+		this.nom = nom;
+		this.prenom = prenom;
+		this.email = email;
+		this.telephone = telephone;
+		this.rue = rue;
+		this.codePostal = codePostal;
+		this.ville = ville;
+		this.motDePasse = motDePasse;
+		this.confirmation = confirmation;
+	}
+
+
+	public Utilisateur(String pseudo, String nom, String prenom, String email, int telephone, String rue,
+			int codePostale, String ville, String motDePasse, String confirmation) {
+		// TODO Auto-generated constructor stub
 	}
 
 	public int getNoUtilisateur() {

@@ -1,5 +1,6 @@
 package fr.eni.ProjetENI.bll;
 
+import fr.eni.ProjetENI.BusinessException.BusinessException;
 import fr.eni.ProjetENI.bo.Utilisateur;
 import fr.eni.ProjetENI.dal.DAOFactory;
 import fr.eni.ProjetENI.dal.UtilisateurDAO;
@@ -21,7 +22,6 @@ public class utilisateurManager {
 	BusinessException exception = new BusinessException();
 	
 	Utilisateur utilisateur = new Utilisateur(pseudo, nom, prenom, email, telephone, rue, codePostale, ville, motDePasse, confirmation);
-	Pseudo pseudo = new Pseudo (String);
 			
 		this.validerPseudo(utilisateur, exception);
 		this.validerNom(utilisateur, exception);
@@ -37,6 +37,15 @@ public class utilisateurManager {
 		if(!exception.hasErreurs())
 		{
 			this.utilisateurDAO.insert(pseudo);
+			this.utilisateurDAO.insert(nom);
+			this.utilisateurDAO.insert(prenom);
+			this.utilisateurDAO.insert(email);
+			this.utilisateurDAO.insert(telephone);
+			this.utilisateurDAO.insert(rue);
+			this.utilisateurDAO.insert(codePostale);
+			this.utilisateurDAO.insert(ville);
+			this.utilisateurDAO.insert(motDePasse);
+			this.utilisateurDAO.insert(confirmation);
 		}
 		
 		if(exception.hasErreurs())
