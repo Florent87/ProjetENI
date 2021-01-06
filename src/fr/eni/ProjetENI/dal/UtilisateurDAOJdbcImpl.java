@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
+import fr.eni.ProjetENI.BusinessException.BusinessException;
 import fr.eni.ProjetENI.bo.Utilisateur;
 
 public class UtilisateurDAOJdbcImpl implements UtilisateurDAO {
@@ -14,7 +15,7 @@ public class UtilisateurDAOJdbcImpl implements UtilisateurDAO {
     private static final String DELETE = "DELETE FROM UTILISATEURS WHERE no_utilisateur = ?";
     
 	@Override
-	public void insert(Utilisateur utilisateur) {
+	public void insert(Utilisateur utilisateur) throws BusinessException {
 
 		try (Connection connection = ConnectionProvider.getConnection()){
 			PreparedStatement preparedStatement = connection.prepareStatement(INSERT);
@@ -33,6 +34,8 @@ public class UtilisateurDAOJdbcImpl implements UtilisateurDAO {
 			
 		} catch(Exception e) {
 			e.printStackTrace();
+			BusinessException businessException = new BusinessException();
+			throw businessException;
 		}
 		
 	}

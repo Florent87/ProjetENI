@@ -5,12 +5,11 @@ import fr.eni.ProjetENI.bo.Utilisateur;
 import fr.eni.ProjetENI.dal.DAOFactory;
 import fr.eni.ProjetENI.dal.UtilisateurDAO;
 
-public class utilisateurManager {
+public class UtilisateurManager {
 	
 	private UtilisateurDAO utilisateurDAO;
 
-	public utilisateurManager(UtilisateurDAO utilisateurDAO) {
-		super();
+	public UtilisateurManager() {
 		this.utilisateurDAO = DAOFactory.getUtilisateurDAO();
 	}
 	
@@ -23,29 +22,22 @@ public class utilisateurManager {
 	
 	Utilisateur utilisateur = new Utilisateur(pseudo, nom, prenom, email, telephone, rue, codePostale, ville, motDePasse, confirmation);
 			
-		this.validerPseudo(utilisateur, exception);
-		this.validerNom(utilisateur, exception);
-		this.validerPrenom(utilisateur, exception);
-		this.validerEmail(utilisateur, exception);
-		this.validerTelephone(utilisateur, exception);
-		this.validerRue(utilisateur, exception);
-		this.validerCodePostale(utilisateur, exception);
-		this.validerVille(utilisateur, exception);
-		this.validerMotDePasse(utilisateur, exception);
-		this.validerConfirmation(utilisateur, exception);
+//		this.validerPseudo(utilisateur, exception);
+//		this.validerNom(utilisateur, exception);
+//		this.validerPrenom(utilisateur, exception);
+//		this.validerEmail(utilisateur, exception);
+//		this.validerTelephone(utilisateur, exception);
+//		this.validerRue(utilisateur, exception);
+//		this.validerCodePostale(utilisateur, exception);
+//		this.validerVille(utilisateur, exception);
+//		this.validerMotDePasse(utilisateur, exception);
+//		this.validerConfirmation(utilisateur, exception);
+	
+		this.validerUtilisateur(utilisateur, exception);
 		
 		if(!exception.hasErreurs())
 		{
-			this.utilisateurDAO.insert(pseudo);
-			this.utilisateurDAO.insert(nom);
-			this.utilisateurDAO.insert(prenom);
-			this.utilisateurDAO.insert(email);
-			this.utilisateurDAO.insert(telephone);
-			this.utilisateurDAO.insert(rue);
-			this.utilisateurDAO.insert(codePostale);
-			this.utilisateurDAO.insert(ville);
-			this.utilisateurDAO.insert(motDePasse);
-			this.utilisateurDAO.insert(confirmation);
+			this.utilisateurDAO.insert(utilisateur);
 		}
 		
 		if(exception.hasErreurs())
@@ -64,9 +56,10 @@ public class utilisateurManager {
 	
 	private void validerUtilisateur(Utilisateur utilisateur, BusinessException businessException)
 	{
-		if(utilisateur.getUtilisateur()==null || utilisateur.getUtilisateur().length()>150)
+		if(utilisateur.getPseudo() == null || utilisateur.getPseudo().length()>150)
 		{
 			businessException.ajouterErreur(CodesResultatBLL.REGLE_UTILISATEUR_DESCRIPTION_ERREUR);
 		}
 	}
+}
 

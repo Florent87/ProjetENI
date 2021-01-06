@@ -7,10 +7,15 @@ driverClassName="com.microsoft.sqlserver.jdbc.SQLServerDriver"
 type="javax.sql.DataSource"
 url="jdbc:sqlserver://localhost;databasename=BDD_PROJET_ENCHERES" 
 
-username="sa" 
-password="Pa$$w0rd"
+username="student" 
+password="student"
 
 maxTotal="100" 
 maxIdle="30"
 maxWaitMillis="10000"/>
 </context>
+
+<!-- 
+username="sa" 
+password="Pa$$w0rd" 
+-->

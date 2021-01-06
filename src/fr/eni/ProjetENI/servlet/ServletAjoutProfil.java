@@ -11,6 +11,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import fr.eni.ProjetENI.BusinessException.BusinessException;
+import fr.eni.ProjetENI.bll.UtilisateurManager;
+import fr.eni.ProjetENI.bo.Utilisateur;
+
 
 /**
  * Servlet implementation class ServletAjoutProfil
@@ -61,9 +65,10 @@ public class ServletAjoutProfil extends HttpServlet {
 			motDePasse = request.getParameter("motDePasse");
 			confirmation = request.getParameter("confirmation");
 			
-			AvisManager avisManager = new AvisManager();
-			Avis avis = avisManager.ajouter(description, note);
-			request.setAttribute("avis", avis);
+			UtilisateurManager utilisateurManager = new UtilisateurManager();
+			Utilisateur utilisateur = new Utilisateur(pseudo, nom, prenom, email, telephone, rue, codePostale, ville, motDePasse, confirmation);
+			utilisateurManager.ajouter(pseudo, nom, prenom, email, telephone, rue, codePostale, ville, motDePasse, confirmation);
+			request.setAttribute("utilisateur", utilisateur);
 		}
 		catch(NumberFormatException e)
 		{
