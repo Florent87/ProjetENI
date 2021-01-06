@@ -17,50 +17,50 @@
 	<p>
 		<div>
 			<label for="pseudo">Pseudo :</label>
-			<input type="text" name="pseudo" id="pseudo" value="<%=listeCodesErreur!=null?request.getParameter("pseudo"):""%>"required/>/>
+			<input type="text" name="pseudo" id="pseudo" value="<%=request.getParameter("pseudo")%>"required/>
 
 			<label for="nom">Nom :</label>
-			<input type="text" name="nom" id="nom" value="<%=listeCodesErreur!=null?request.getParameter("nom"):""%>"required/>
+			<input type="text" name="nom" id="nom" value="<%=request.getParameter("nom")%>"required/>
 		</div>
 	</p>
 	
 	<p>
 		<div>
 			<label for="prenom">Prénom :</label>
-			<input type="text" name="prenom" id="prenom" value="<%=listeCodesErreur!=null?request.getParameter("prenom"):""%>"required/>
+			<input type="text" name="prenom" id="prenom" value="<%=request.getParameter("prenom")%>"required/>
 
 			<label for="email">E-mail :</label>
-			<input type="email" name="email" id="email" value="<%=listeCodesErreur!=null?request.getParameter("email"):""%>"required/>
+			<input type="email" name="email" id="email" value="<%=request.getParameter("email")%>"required/>
 		</div>
 	</p>
 	
 	<p>
 		<div>
 			<label for="telephone">Téléphone :</label>
-			<input type="tel" name="telephone" id="telephone" required value="<%=listeCodesErreur!=null?request.getParameter("telephone"):""%>"required/>
+			<input type="tel" name="telephone" id="telephone" required value="<%=request.getParameter("telephone")%>"required/>
 
 			<label for="rue">Rue :</label>
-			<input type="text" name="rue" id="rue" required value="<%=listeCodesErreur!=null?request.getParameter("rue"):""%>"required/>
+			<input type="text" name="rue" id="rue" required value="<%=request.getParameter("rue")%>"required/>
 		</div>
 	</p>
 	
 	<p>
 		<div>
-			<label for="code_postal">Code postal :</label>
-			<input type="number" name="code_postal" id="code_postal" value="<%=listeCodesErreur!=null?request.getParameter("code_postal"):""%>"required/>
+			<label for="codePostal">Code postal :</label>
+			<input type="number" name="codePostal" id="codePostal" value="<%=request.getParameter("code_postal")%>"required/>
 
 			<label for="ville">Ville :</label>
-			<input type="text" name="ville" id="ville" value="<%=listeCodesErreur!=null?request.getParameter("ville"):""%>"required/>
+			<input type="text" name="ville" id="ville" value="<%=request.getParameter("ville")%>"required/>
 		</div>
 	</p>
 	
 	<p>
 		<div>
-			<label for="mot_de_passe">Mot de passe :</label>
-			<input type="password" name="mot_de_passe" id="mot_de_passe" value="<%=listeCodesErreur!=null?request.getParameter("mot_de_passe"):""%>"required/>
+			<label for="motDePasse">Mot de passe :</label>
+			<input type="password" name="motDePasse" id="motDePasse" value="<%=request.getParameter("mot_de_passe")%>"required/>
 
 			<label for="Confirmation">Confirmation :</label>
-			<input type="password" name="confirmation" id="confirmation"value="<%=listeCodesErreur!=null?request.getParameter("confirmation"):""%>"required/>
+			<input type="password" name="confirmation" id="confirmation"value="<%=request.getParameter("confirmation")%>"required/>
 		</div>
 	</p>
 	

@@ -15,7 +15,7 @@ public class Utilisateur {
 	private int codePostal;
 	private String ville;
 	private String motDePasse;
-	private int confirmation;
+	private String confirmation;
 	private int credit;
 	private String administrateur;
 	
@@ -45,7 +45,7 @@ public class Utilisateur {
 	
 
 	public Utilisateur(String pseudo, String nom, String prenom, String email, int telephone, String rue,
-			int codePostal, String ville, String motDePasse, int confirmation) {
+			int codePostal, String ville, String motDePasse, String confirmation) {
 		super();
 		this.pseudo = pseudo;
 		this.nom = nom;
@@ -60,10 +60,7 @@ public class Utilisateur {
 	}
 
 
-	public Utilisateur(String pseudo, String nom, String prenom, String email, int telephone, String rue,
-			int codePostale, String ville, String motDePasse, String confirmation) {
-		// TODO Auto-generated constructor stub
-	}
+	
 
 	public int getNoUtilisateur() {
 		return noUtilisateur;
@@ -175,6 +172,11 @@ public class Utilisateur {
 				+ prenom + ", email=" + email + ", telephone=" + telephone + ", rue=" + rue + ", codePostal="
 				+ codePostal + ", ville=" + ville + ", motDePasse=" + motDePasse + ", credit=" + credit
 				+ ", administrateur=" + administrateur + ", articleVendu=" + articleVendu + "]";
+	}
+
+	public String getConfirmation() {
+		
+		return confirmation;
 	}
 	
 }

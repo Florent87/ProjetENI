@@ -65,6 +65,7 @@ public class ServletAjoutProfil extends HttpServlet {
 			motDePasse = request.getParameter("motDePasse");
 			confirmation = request.getParameter("confirmation");
 			
+		
 			UtilisateurManager utilisateurManager = new UtilisateurManager();
 			Utilisateur utilisateur = new Utilisateur(pseudo, nom, prenom, email, telephone, rue, codePostale, ville, motDePasse, confirmation);
 			utilisateurManager.ajouter(pseudo, nom, prenom, email, telephone, rue, codePostale, ville, motDePasse, confirmation);
@@ -78,7 +79,8 @@ public class ServletAjoutProfil extends HttpServlet {
 		} catch (BusinessException e) {
 			request.setAttribute("listeCodesErreur", e.getListeCodesErreur());
 		}
-		
+		RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/Profil.jsp");
+		rd.forward(request, response);
 	}
 
 	
