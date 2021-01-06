@@ -22,6 +22,7 @@
 			<input type="text" name="nom" id="nom" required/>
 		</div>
 	</p>
+	
 	<p>
 		<div>
 			<label for="prenom">Prénom :</label>
@@ -31,6 +32,7 @@
 			<input type="email" name="email" id="email" required/>
 		</div>
 	</p>
+	
 	<p>
 		<div>
 			<label for="telephone">Téléphone :</label>
@@ -40,6 +42,7 @@
 			<input type="text" name="rue" id="rue" required/>
 		</div>
 	</p>
+	
 	<p>
 		<div>
 			<label for="code_postal">Code postal :</label>
@@ -49,6 +52,7 @@
 			<input type="text" name="ville" id="ville" required/>
 		</div>
 	</p>
+	
 	<p>
 		<div>
 			<label for="mot_de_passe">Mot de passe :</label>
