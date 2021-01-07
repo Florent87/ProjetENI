@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@page import="fr.eni.ProjetENI.bo.Utilisateur"%>
+<%@page import="java.util.List"%>
+<%@page import="fr.eni.ProjetENI.messages.LecteurMessage"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,56 +13,85 @@
 
 <body>
 
+<%
+		Utilisateur utilisateur = (Utilisateur)request.getAttribute("utilisateur");
+		if(utilisateur!=null)
+		{
+	%>
+			<p style="color:blue;">Votre profil a bien été enregistré a été ajouté avec succès :</p>
+			<p><%=utilisateur %></p>
+	<%	
+		} 
+	%>
+	
+	<%
+		List<Integer> listeCodesErreur = (List<Integer>)request.getAttribute("listeCodesErreur");
+		if(listeCodesErreur!=null)
+		{
+	%>
+			<p style="color:red;">Erreur, votre profil n'apas pu être enregistré dans notre base de donnée :</p>
+	<%
+			for(int codeErreur:listeCodesErreur)
+			{
+	%>
+				<p><%=LecteurMessage.getMessageErreur(codeErreur)%></p>
+	<%	
+			}
+		}
+	%>
+
+
+
+
 <h1>Mon profil</h1>
 
 <form name="profil" action="<%=request.getContextPath()%>/ServletAjoutProfil" method="post">
 
 	<p>
-		<div>
+		<div> 
 			<label for="pseudo">Pseudo :</label>
 			<input type="text" name="pseudo" id="pseudo" value="<%=request.getParameter("pseudo")!=null?request.getParameter("pseudo"):""%>"required/>
 			<label for="nom">Nom :</label>
-			<input type="text" name="nom" id="nom" value="<%=request.getParameter("nom")%>"required/>
+			<input type="text" name="nom" id="nom" value="<%=request.getParameter("nom")!=null?request.getParameter("nom"):""%>"required/>
 		</div>
 	</p>
 	
 	<p>
 		<div>
 			<label for="prenom">Prénom :</label>
-			<input type="text" name="prenom" id="prenom" value="<%=request.getParameter("prenom")%>"required/>
-
+			<input type="text" name="prenom" id="prenom" value="<%=request.getParameter("prenom")!=null?request.getParameter("prenom"):""%>"required/>
 			<label for="email">E-mail :</label>
-			<input type="email" name="email" id="email" value="<%=request.getParameter("email")%>"required/>
+			<input type="email" name="email" id="email" value="<%=request.getParameter("email")!=null?request.getParameter("email"):""%>"required/>
 		</div>
 	</p>
 	
 	<p>
 		<div>
 			<label for="telephone">Téléphone :</label>
-			<input type="tel" name="telephone" id="telephone" required value="<%=request.getParameter("telephone")%>"required/>
+			<input type="tel" name="telephone" id="telephone" required value="<%=request.getParameter("telephone")!=null?request.getParameter("telephone"):""%>"required/>
 
 			<label for="rue">Rue :</label>
-			<input type="text" name="rue" id="rue" required value="<%=request.getParameter("rue")%>"required/>
+			<input type="text" name="rue" id="rue" required value="<%=request.getParameter("rue")!=null?request.getParameter("rue"):""%>"required/>
 		</div>
 	</p>
 	
 	<p>
 		<div>
 			<label for="codePostal">Code postal :</label>
-			<input type="number" name="codePostal" id="codePostal" value="<%=request.getParameter("code_postal")%>"required/>
+			<input type="number" name="codePostal" id="codePostal" value="<%=request.getParameter("codePostal")!=null?request.getParameter("codePostal"):""%>"required/>
 
 			<label for="ville">Ville :</label>
-			<input type="text" name="ville" id="ville" value="<%=request.getParameter("ville")%>"required/>
+			<input type="text" name="ville" id="ville" value="<%=request.getParameter("ville")!=null?request.getParameter("ville"):""%>"required/>
 		</div>
 	</p>
 	
 	<p>
 		<div>
 			<label for="motDePasse">Mot de passe :</label>
-			<input type="password" name="motDePasse" id="motDePasse" value="<%=request.getParameter("mot_de_passe")%>"required/>
+			<input type="password" name="motDePasse" id="motDePasse" value="<%=request.getParameter("mot_de_passe")!=null?request.getParameter("motDepasse"):""%>"required/>
 
 			<label for="Confirmation">Confirmation :</label>
-			<input type="password" name="confirmation" id="confirmation"value="<%=request.getParameter("confirmation")%>"required/>
+			<input type="password" name="confirmation" id="confirmation"value="<%=request.getParameter("confirmation")!=null?request.getParameter("confirmation"):""%>"required/>
 		</div>
 	</p>
 	
