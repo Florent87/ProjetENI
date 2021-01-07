@@ -2,7 +2,6 @@ package fr.eni.ProjetENI.dal;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 
 import fr.eni.ProjetENI.BusinessException.BusinessException;
 import fr.eni.ProjetENI.bo.Utilisateur;
@@ -17,21 +16,22 @@ public class UtilisateurDAOJdbcImpl implements UtilisateurDAO {
 	@Override
 	public void insert(Utilisateur utilisateur) throws BusinessException {
 
+		System.out.println("Before insert");
 		try (Connection connection = ConnectionProvider.getConnection()){
 			PreparedStatement preparedStatement = connection.prepareStatement(INSERT);
 			preparedStatement.setString(1, utilisateur.getPseudo());
 			preparedStatement.setString(2, utilisateur.getNom());
 			preparedStatement.setString(3, utilisateur.getPrenom());
 			preparedStatement.setString(4, utilisateur.getEmail());
-			preparedStatement.setInt(5, utilisateur.getTelephone());
+			preparedStatement.setString(5, String.valueOf(utilisateur.getTelephone()));
 			preparedStatement.setString(6, utilisateur.getRue());
-			preparedStatement.setInt(7, utilisateur.getCodePostal());
+			preparedStatement.setString(7, String.valueOf(utilisateur.getCodePostal()));
 			preparedStatement.setString(8, utilisateur.getVille());
 			preparedStatement.setString(9, utilisateur.getMotDePasse());
 			preparedStatement.setInt(10, utilisateur.getCredit());
-			preparedStatement.setString(11, utilisateur.getAdministrateur());
+			preparedStatement.setString(11, "0");
 			preparedStatement.executeUpdate();
-			
+			System.out.println("Insert completed");
 		} catch(Exception e) {
 			e.printStackTrace();
 			BusinessException businessException = new BusinessException();

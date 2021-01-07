@@ -39,7 +39,6 @@ public class ServletAjoutProfil extends HttpServlet {
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		doGet(request, response);
 		request.setCharacterEncoding("UTF-8");
 		String pseudo;
 		String nom;
@@ -60,12 +59,11 @@ public class ServletAjoutProfil extends HttpServlet {
 			email = request.getParameter("email");
 			telephone= Integer.parseInt(request.getParameter("telephone"));
 			rue = request.getParameter("rue");
-			codePostale= Integer.parseInt(request.getParameter("codePostale"));
+			codePostale= Integer.parseInt(request.getParameter("codePostal"));
 			ville = request.getParameter("ville");
 			motDePasse = request.getParameter("motDePasse");
 			confirmation = request.getParameter("confirmation");
 			
-		
 			UtilisateurManager utilisateurManager = new UtilisateurManager();
 			Utilisateur utilisateur = new Utilisateur(pseudo, nom, prenom, email, telephone, rue, codePostale, ville, motDePasse, confirmation);
 			utilisateurManager.ajouter(pseudo, nom, prenom, email, telephone, rue, codePostale, ville, motDePasse, confirmation);
@@ -73,13 +71,14 @@ public class ServletAjoutProfil extends HttpServlet {
 		}
 		catch(NumberFormatException e)
 		{
+			e.printStackTrace();
 			List<Integer> listeCodesErreur=new ArrayList<>();
 			listeCodesErreur.add(CodesResultatServlets.FORMAT_AVIS_NOTE_ERREUR);
 			request.setAttribute("listeCodesErreur",listeCodesErreur);
 		} catch (BusinessException e) {
 			request.setAttribute("listeCodesErreur", e.getListeCodesErreur());
 		}
-		RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/Profil.jsp");
+		RequestDispatcher rd = request.getRequestDispatcher("Index.jsp");
 		rd.forward(request, response);
 	}
 

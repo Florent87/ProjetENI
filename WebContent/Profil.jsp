@@ -12,7 +12,7 @@
 
 <h1>Mon profil</h1>
 
-<form name="profil" action=<%=request.getContextPath()%>/ServletAjoutProfil" method="post">
+<form name="profil" action="<%=request.getContextPath()%>/ServletAjoutProfil" method="post">
 
 	<p>
 		<div>
