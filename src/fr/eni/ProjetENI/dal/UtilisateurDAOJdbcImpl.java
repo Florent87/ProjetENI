@@ -2,13 +2,14 @@ package fr.eni.ProjetENI.dal;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 
 import fr.eni.ProjetENI.BusinessException.BusinessException;
 import fr.eni.ProjetENI.bo.Utilisateur;
 
 public class UtilisateurDAOJdbcImpl implements UtilisateurDAO {
 	private static final String INSERT = "INSERT INTO UTILISATEURS VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
-    private static final String UPDATE = "UPDATE UTILISATEURS SET nom = ?, prenom = ? WHERE no_utilisateur = ?";
+    //private static final String UPDATE = "UPDATE UTILISATEURS SET nom = ?, prenom = ? WHERE no_utilisateur = ?"; // A MODIFIER
     private static final String GET_BY_ID = "SELECT * FROM UTILISATEURS WHERE no_utilisateur = ?";
     private static final String GET_ALL = "SELECT * FROM UTILISATEURS";
     private static final String DELETE = "DELETE FROM UTILISATEURS WHERE no_utilisateur = ?";
@@ -16,7 +17,6 @@ public class UtilisateurDAOJdbcImpl implements UtilisateurDAO {
 	@Override
 	public void insert(Utilisateur utilisateur) throws BusinessException {
 
-		System.out.println("Before insert");
 		try (Connection connection = ConnectionProvider.getConnection()){
 			PreparedStatement preparedStatement = connection.prepareStatement(INSERT);
 			preparedStatement.setString(1, utilisateur.getPseudo());
@@ -31,12 +31,45 @@ public class UtilisateurDAOJdbcImpl implements UtilisateurDAO {
 			preparedStatement.setInt(10, utilisateur.getCredit());
 			preparedStatement.setString(11, "0");
 			preparedStatement.executeUpdate();
-			System.out.println("Insert completed");
 		} catch(Exception e) {
 			e.printStackTrace();
 			BusinessException businessException = new BusinessException();
 			throw businessException;
 		}
 		
+	}
+
+	@Override
+	public Utilisateur getById(int noUtilisateur) throws BusinessException {
+		
+		Utilisateur utilisateur = null;
+
+		try (Connection connection = ConnectionProvider.getConnection()){
+			PreparedStatement preparedStatement = connection.prepareStatement(DELETE);
+			preparedStatement.setInt(1, noUtilisateur);
+			ResultSet response = preparedStatement.executeQuery();
+			
+			if(response.next()) {
+				utilisateur = new Utilisateur();
+				utilisateur.setNoUtilisateur(response.getInt("no_utilisateur"));
+				utilisateur.setPseudo(response.getString("pseudo"));
+				utilisateur.setNom(response.getString("nom"));
+				utilisateur.setPrenom(response.getString("prenom"));
+				utilisateur.setEmail(response.getString("email"));
+				utilisateur.setTelephone(response.getInt("telephone"));
+				utilisateur.setRue(response.getString("rue"));
+				utilisateur.setCodePostal(response.getInt("code_postal"));
+				utilisateur.setVille(response.getString("ville"));
+				utilisateur.setMotDePasse(response.getString("mot_de_passe"));
+				utilisateur.setCredit(response.getInt("credit"));
+				utilisateur.setAdministrateur(response.getString("administrateur"));
+			}
+		
+		} catch (Exception e) {
+			e.printStackTrace();
+			BusinessException businessException = new BusinessException();
+			throw businessException;
+		}
+		return utilisateur;
 	}
 }

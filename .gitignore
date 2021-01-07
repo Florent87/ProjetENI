@@ -3,5 +3,4 @@
 .project
 .gitignore
 /.settings/
-/WebContent/META-INF/context.xml
 /WebContent/WEB-INF/lib/
