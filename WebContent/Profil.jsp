@@ -17,8 +17,7 @@
 	<p>
 		<div>
 			<label for="pseudo">Pseudo :</label>
-			<input type="text" name="pseudo" id="pseudo" value="<%=request.getParameter("pseudo")%>"required/>
-
+			<input type="text" name="pseudo" id="pseudo" value="<%=request.getParameter("pseudo")!=null?request.getParameter("pseudo"):""%>"required/>
 			<label for="nom">Nom :</label>
 			<input type="text" name="nom" id="nom" value="<%=request.getParameter("nom")%>"required/>
 		</div>

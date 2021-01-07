@@ -28,7 +28,7 @@ public class UtilisateurManager {
      	this.validerEmail(utilisateur, exception);
 		this.validerTelephone(utilisateur, exception);
 		this.validerRue(utilisateur, exception);
-		this.validerCodePostale(utilisateur, exception);
+		this.validerCodePostal(utilisateur, exception);
 		this.validerVille(utilisateur, exception);
 		this.validerMotDePasse(utilisateur, exception);
 		this.validerConfirmation(utilisateur, exception);
@@ -68,9 +68,7 @@ public class UtilisateurManager {
 		}
 		
 	}
-
-	
-	private void validerPseudo(Utilisateur utilisateur, BusinessException businessException)
+    private void validerPseudo(Utilisateur utilisateur, BusinessException businessException)
 	{
 		if(utilisateur.getPseudo() == null || utilisateur.getPseudo().length()>150)
 		{
@@ -85,22 +83,31 @@ public class UtilisateurManager {
 			businessException.ajouterErreur(CodesResultatBLL.REGLE_UTILISATEUR_DESCRIPTION_ERREUR);
 		}
 	}
-	private void validerTelephone(Utilisateur utilisateur, BusinessException businessException)
-	{
-		
-		
-	}
 	
+		 			
+			
 	private void validerRue(Utilisateur utilisateur, BusinessException businessException)
 	{
 		if(utilisateur.getRue() == null || utilisateur.getRue().length()>150)
-		{
-			businessException.ajouterErreur(CodesResultatBLL.REGLE_UTILISATEUR_DESCRIPTION_ERREUR);
+		{businessException.ajouterErreur(CodesResultatBLL.REGLE_UTILISATEUR_DESCRIPTION_ERREUR);
 		}
-	}
-	private void validerCodePostale(Utilisateur utilisateur, BusinessException businessException)
-	{
+	}		
 		
+	private void validerTelephone(Utilisateur utilisateur, BusinessException businessException)
+	
+	{
+		if(String.valueOf(utilisateur.getTelephone()).length()!=10)
+		{businessException.ajouterErreur(CodesResultatBLL.REGLE_UTILISATEUR_DESCRIPTION_ERREUR);
+		}
+		
+	}
+	
+private void validerCodePostal(Utilisateur utilisateur, BusinessException businessException)
+	
+	{if(String.valueOf(utilisateur.getCodePostal()).length()!=5)
+		
+		{businessException.ajouterErreur(CodesResultatBLL.REGLE_UTILISATEUR_DESCRIPTION_ERREUR);
+		}	
 	}
 			
 	private void validerVille(Utilisateur utilisateur, BusinessException businessException)
@@ -126,4 +133,3 @@ public class UtilisateurManager {
 	}
 	
 }
-
