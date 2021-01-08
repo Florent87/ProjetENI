@@ -18,12 +18,12 @@ public class UtilisateurDAOJdbcImpl implements UtilisateurDAO {
 	public void insert(Utilisateur utilisateur) throws BusinessException {
 
 		try (Connection connection = ConnectionProvider.getConnection()){
-			PreparedStatement preparedStatement = connection.prepareStatement(INSERT);
+			PreparedStatement preparedStatement = connection.prepareStatement(INSERT, PreparedStatement.RETURN_GENERATED_KEYS);
 			preparedStatement.setString(1, utilisateur.getPseudo());
 			preparedStatement.setString(2, utilisateur.getNom());
 			preparedStatement.setString(3, utilisateur.getPrenom());
 			preparedStatement.setString(4, utilisateur.getEmail());
-			preparedStatement.setString(5, String.valueOf(utilisateur.getTelephone()));
+			preparedStatement.setString(5, utilisateur.getTelephone());
 			preparedStatement.setString(6, utilisateur.getRue());
 			preparedStatement.setString(7, String.valueOf(utilisateur.getCodePostal()));
 			preparedStatement.setString(8, utilisateur.getVille());
@@ -31,7 +31,12 @@ public class UtilisateurDAOJdbcImpl implements UtilisateurDAO {
 			preparedStatement.setInt(10, utilisateur.getCredit());
 			preparedStatement.setString(11, "0");
 			preparedStatement.executeUpdate();
-		} catch(Exception e) {
+			ResultSet rs = preparedStatement.getGeneratedKeys();
+			if(rs.next())
+			{utilisateur.setNoUtilisateur(rs.getInt(1));
+		} 
+			
+		}catch(Exception e) {
 			e.printStackTrace();
 			BusinessException businessException = new BusinessException();
 			throw businessException;
@@ -56,7 +61,7 @@ public class UtilisateurDAOJdbcImpl implements UtilisateurDAO {
 				utilisateur.setNom(response.getString("nom"));
 				utilisateur.setPrenom(response.getString("prenom"));
 				utilisateur.setEmail(response.getString("email"));
-				utilisateur.setTelephone(response.getInt("telephone"));
+				utilisateur.setTelephone(response.getString("telephone"));
 				utilisateur.setRue(response.getString("rue"));
 				utilisateur.setCodePostal(response.getInt("code_postal"));
 				utilisateur.setVille(response.getString("ville"));
