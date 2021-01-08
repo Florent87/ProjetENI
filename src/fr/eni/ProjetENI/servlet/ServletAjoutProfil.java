@@ -71,6 +71,7 @@ public class ServletAjoutProfil extends HttpServlet {
 		}
 		RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/Index.jsp");
 		rd.forward(request, response);
+		
 	}
 
 	
