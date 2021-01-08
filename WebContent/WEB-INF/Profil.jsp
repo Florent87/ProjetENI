@@ -20,7 +20,7 @@
 		if(utilisateur!=null)
 		{
 	%>
-			<p style="color:blue;">Votre profil a bien été enregistré a été ajouté avec succès :</p>
+			<p style="color:blue;">Votre profil a été enregistré avec succès :</p>
 			<p><%=utilisateur %></p>
 	<%	
 		} 
@@ -31,7 +31,7 @@
 		if(listeCodesErreur!=null)
 		{
 	%>
-			<p style="color:red;">Erreur, votre profil n'apas pu être enregistré dans notre base de donnée :</p>
+			<p style="color:red;">Erreur, votre profil n'a pas pu être enregistré dans notre base de donnée :</p>
 	<%
 			for(int codeErreur:listeCodesErreur)
 			{
