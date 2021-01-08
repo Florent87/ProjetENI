@@ -1,6 +1,8 @@
 package fr.eni.ProjetENI.servlet;
 
 import java.io.IOException;
+
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -13,8 +15,14 @@ public class ConnectionServlet extends HttpServlet {
       
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 //		response.getWriter().append("Served at: ").append(request.getContextPath());
-		response.sendRedirect("Connection.jsp");
+		RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/Connection.jsp");
+		rd.forward(request, response);
 	}
+	
+	
+	
+		//response.sendRedirect("Connection.jsp");
+	
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
