@@ -23,16 +23,7 @@ import fr.eni.ProjetENI.bo.Utilisateur;
 public class ServletAjoutProfil extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public ServletAjoutProfil() {
-        super();
-    }
-
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
+   
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/Profil.jsp");
 		rd.forward(request, response);
@@ -44,7 +35,7 @@ public class ServletAjoutProfil extends HttpServlet {
 		String nom;
 		String prenom;
 		String email;
-		int telephone;
+		String telephone;
 		String rue;
 		int codePostale;
 		String ville;
@@ -57,7 +48,7 @@ public class ServletAjoutProfil extends HttpServlet {
 			nom = request.getParameter("nom");
 			prenom = request.getParameter("prenom");
 			email = request.getParameter("email");
-			telephone= Integer.parseInt(request.getParameter("telephone"));
+			telephone= request.getParameter("telephone");
 			rue = request.getParameter("rue");
 			codePostale= Integer.parseInt(request.getParameter("codePostal"));
 			ville = request.getParameter("ville");
@@ -78,7 +69,7 @@ public class ServletAjoutProfil extends HttpServlet {
 		} catch (BusinessException e) {
 			request.setAttribute("listeCodesErreur", e.getListeCodesErreur());
 		}
-		RequestDispatcher rd = request.getRequestDispatcher("Index.jsp");
+		RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/Index.jsp");
 		rd.forward(request, response);
 	}
 
