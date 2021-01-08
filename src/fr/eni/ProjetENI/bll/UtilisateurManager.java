@@ -16,7 +16,7 @@ public class UtilisateurManager {
 	/**
 	 * Ce Constructeur permet de connecter une communication avec la base de données
 	 */
-	public Utilisateur ajouter(String pseudo, String nom, String prenom, String email, int telephone, String rue, int codePostale, String ville, String motDePasse, String confirmation) 
+	public Utilisateur ajouter(String pseudo, String nom, String prenom, String email, String telephone, String rue, int codePostale, String ville, String motDePasse, String confirmation) 
 			throws BusinessException {
 	BusinessException exception = new BusinessException();
 	
@@ -96,7 +96,7 @@ public class UtilisateurManager {
 	private void validerTelephone(Utilisateur utilisateur, BusinessException businessException)
 	
 	{
-		if(String.valueOf(utilisateur.getTelephone()).length()!=10)
+		if((utilisateur.getTelephone()).length()!=10)
 		{businessException.ajouterErreur(CodesResultatBLL.REGLE_UTILISATEUR_DESCRIPTION_ERREUR);
 		}
 		
