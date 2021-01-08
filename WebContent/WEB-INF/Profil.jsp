@@ -3,6 +3,8 @@
 <%@page import="fr.eni.ProjetENI.bo.Utilisateur"%>
 <%@page import="java.util.List"%>
 <%@page import="fr.eni.ProjetENI.messages.LecteurMessage"%>
+<%@page import="fr.eni.ProjetENI.BusinessException.BusinessException"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -25,7 +27,7 @@
 	%>
 	
 	<%
-		List<Integer> listeCodesErreur = (List<Integer>)request.getAttribute("listeCodesErreur");
+	List<Integer> listeCodesErreur = (List<Integer>)request.getAttribute("listeCodesErreur");
 		if(listeCodesErreur!=null)
 		{
 	%>
