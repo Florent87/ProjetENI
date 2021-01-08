@@ -10,7 +10,7 @@ public class Utilisateur {
 	private String nom;
 	private String prenom;
 	private String email;
-	private int telephone;
+	private String telephone;
 	private String rue;
 	private int codePostal;
 	private String ville;
@@ -21,30 +21,11 @@ public class Utilisateur {
 	
 	private ArticleVendu articleVendu;
 	
-	public Utilisateur() {
-	}
-
-	public Utilisateur(int noUtilisateur, String pseudo, String nom, String prenom, String email, int telephone,
-			String rue, int codePostal, String ville, String motDePasse, int credit, String administrateur,
-			ArticleVendu articleVendu) {
-		this.noUtilisateur = noUtilisateur;
-		this.pseudo = pseudo;
-		this.nom = nom;
-		this.prenom = prenom;
-		this.email = email;
-		this.telephone = telephone;
-		this.rue = rue;
-		this.codePostal = codePostal;
-		this.ville = ville;
-		this.motDePasse = motDePasse;
-		this.credit = credit;
-		this.administrateur = administrateur;
-		this.articleVendu = articleVendu;
-	}
-	
 	
 
-	public Utilisateur(String pseudo, String nom, String prenom, String email, int telephone, String rue,
+	
+	
+	public Utilisateur(String pseudo, String nom, String prenom, String email, String telephone, String rue,
 			int codePostal, String ville, String motDePasse, String confirmation) {
 		super();
 		this.pseudo = pseudo;
@@ -61,6 +42,12 @@ public class Utilisateur {
 
 
 	
+
+	public Utilisateur() {
+		// TODO Auto-generated constructor stub
+	}
+
+
 
 	public int getNoUtilisateur() {
 		return noUtilisateur;
@@ -102,11 +89,11 @@ public class Utilisateur {
 		this.email = email;
 	}
 
-	public int getTelephone() {
+	public String getTelephone() {
 		return telephone;
 	}
 
-	public void setTelephone(int telephone) {
+	public void setTelephone(String telephone) {
 		this.telephone = telephone;
 	}
 
