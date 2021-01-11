@@ -8,12 +8,15 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link href="${pageContext.request.contextPath}/CSS/Profil.css" rel="stylesheet" />
+
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Mon profil</title>
 </head>
 <div>ENI-ENCHERES</div>
 
 <body>
+<link href="${pageContext.request.contextPath}/CSS/Profil.css" rel="stylesheet" />
 
 	<%
 		Utilisateur utilisateur = (Utilisateur)request.getAttribute("utilisateur");
@@ -44,10 +47,10 @@
 
 <h1>Mon profil</h1>
 
-<form name="profil" action="<%=request.getContextPath()%>/ServletAjoutProfil" method="post">
 
 	<p>
 		<div> 
+		<link href="${pageContext.request.contextPath}/CSS/Profil.css" rel="stylesheet" />
 			<label for="pseudo">Pseudo :</label>
 			<input type="text" name="pseudo" id="pseudo" value="<%=listeCodesErreur!=null?request.getParameter("pseudo"):""%>"required/>
 			<label for="nom">Nom :</label>
