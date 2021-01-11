@@ -15,7 +15,7 @@
 
 <body>
 
-<%
+	<%
 		Utilisateur utilisateur = (Utilisateur)request.getAttribute("utilisateur");
 		if(utilisateur!=null)
 		{
@@ -41,9 +41,6 @@
 			}
 		}
 	%>
-
-
-
 
 <h1>Mon profil</h1>
 
