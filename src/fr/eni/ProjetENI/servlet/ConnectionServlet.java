@@ -9,24 +9,41 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import fr.eni.ProjetENI.bll.UtilisateurManager;
+import fr.eni.ProjetENI.bo.Utilisateur;
+
 @WebServlet("/connexion")
 public class ConnectionServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
       
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-//		response.getWriter().append("Served at: ").append(request.getContextPath());
 		RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/Connexion.jsp");
 		rd.forward(request, response);
 	}
-	
-	
-	
-		//response.sendRedirect("Connection.jsp");
-	
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+		String pseudo, password;
+		Utilisateur utilisateur = null;
+		boolean connect;
+		try {
+			pseudo = request.getParameter("pseudo");
+			password = request.getParameter("password");
+			connect = request.getParameterValues("connect") != null;
+			
+			UtilisateurManager utilisateurManager = new UtilisateurManager();
+			utilisateur = utilisateurManager.authentifier(pseudo, password);
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+
+		if (utilisateur != null) {
+			request.getSession().setAttribute("utilisateur", utilisateur);
+			RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/Index.jsp");
+			rd.forward(request, response);
+		} else {
+			RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/Connexion.jsp");
+			rd.forward(request, response);
+		}
 	}
 
 }
