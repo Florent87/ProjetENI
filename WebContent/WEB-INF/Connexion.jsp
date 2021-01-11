@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link href="${pageContext.request.contextPath}/META-INF/public/css/index.css" rel="stylesheet" />
+<link href="${pageContext.request.contextPath}/public/css/connexion.css" rel="stylesheet" />
 <title>Page de connexion</title>
 <style type="text/css">
 label {
