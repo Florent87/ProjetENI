@@ -13,9 +13,23 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Liste des enchères</title>
 </head>
-<div>ENI-ENCHERES</div>
-<div><a href="${pageContext.request.contextPath}/connexion"> S'inscrire-Se connecter</a></div>
 <body>
+<div>ENI-ENCHERES</div>
+	<%
+		Utilisateur membre = (Utilisateur)session.getAttribute("utilisateur");
+		if(membre!=null)
+		{
+	%>
+		<div id="header-user"><a href="${pageContext.request.contextPath}/deconnexion"> Se déconnecter</a></div>	
+	<%	
+		} else {
+	%>	
+		<div id="header-user"><a href="${pageContext.request.contextPath}/connexion"> S'inscrire-Se connecter</a></div>
+	<%	
+		} 
+	%>
+
+
 <h1>Liste des enchères</h1>
 
 <%
