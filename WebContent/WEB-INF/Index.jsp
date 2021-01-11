@@ -8,6 +8,7 @@
 
 <!DOCTYPE html>
 <html>
+<link href="${pageContext.request.contextPath}/public/css/Index.css" rel="stylesheet" />
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Liste des enchères</title>
@@ -22,7 +23,7 @@
 		if(utilisateur!=null)
 		{
 	%>
-			<p style="color:blue;">Votre profil a bien été enregistré a été ajouté avec succès :</p>
+			<p style="color:blue;">Votre profil a bien été enregistré dans notre base de donnée :</p>
 			
 	<%	
 		} 

@@ -15,16 +15,6 @@
 
 <body>
 
-	<%
-		Utilisateur utilisateur = (Utilisateur)request.getAttribute("utilisateur");
-		if(utilisateur!=null)
-		{
-	%>
-			<p style="color:blue;">Votre profil a été enregistré avec succès :</p>
-			<p><%=utilisateur %></p>
-	<%	
-		} 
-	%>
 	
 	<%
 	List<Integer> listeCodesErreur = (List<Integer>)request.getAttribute("listeCodesErreur");
