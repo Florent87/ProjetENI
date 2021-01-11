@@ -10,6 +10,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Page de connection</title>
+<link href="${pageContext.request.contextPath}/META-INF/public/css/index.css" rel="stylesheet" />
 <style type="text/css">
 label {
 	width: 100px;
