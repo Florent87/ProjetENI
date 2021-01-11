@@ -13,7 +13,7 @@
 <title>Liste des enchères</title>
 </head>
 <div>ENI-ENCHERES</div>
-<div><a href="Connection.jsp"> S'inscrire-Se connecter</a></div>
+<div><a href="Connexion.jsp"> S'inscrire-Se connecter</a></div>
 <body>
 <h1>Liste des enchères</h1>
 
