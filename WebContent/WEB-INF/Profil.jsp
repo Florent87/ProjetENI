@@ -98,7 +98,7 @@
 		<div>
 			<input type="submit" value="Créer"/>
 
-			<input type="button" value="Annuler" onclick='location.href="Index.jsp"'/>
+			<input type="button" value="Annuler" onclick='location.href="ServletConnexion.java"'/>
 		</div>
 	</p>
 		

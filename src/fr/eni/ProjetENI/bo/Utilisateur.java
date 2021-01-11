@@ -43,9 +43,16 @@ public class Utilisateur {
 
 	
 
+	public Utilisateur(String pseudo, String motDePasse) {
+		
+	}
+
+
+
 	public Utilisateur() {
 		// TODO Auto-generated constructor stub
 	}
+
 
 
 
