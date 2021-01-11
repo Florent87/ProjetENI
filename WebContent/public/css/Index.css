@@ -1,0 +1,8 @@
+@charset "UTF-8";
+H1 {
+	text-align:center
+}
+#header-user {
+	float: right;
+	min-width: 250px;
+}

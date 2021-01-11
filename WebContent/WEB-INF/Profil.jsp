@@ -18,16 +18,6 @@
 <body>
 <link href="${pageContext.request.contextPath}/CSS/Profil.css" rel="stylesheet" />
 
-	<%
-		Utilisateur utilisateur = (Utilisateur)request.getAttribute("utilisateur");
-		if(utilisateur!=null)
-		{
-	%>
-			<p style="color:blue;">Votre profil a été enregistré avec succès :</p>
-			<p><%=utilisateur %></p>
-	<%	
-		} 
-	%>
 	
 	<%
 	List<Integer> listeCodesErreur = (List<Integer>)request.getAttribute("listeCodesErreur");
@@ -101,7 +91,7 @@
 		<div>
 			<input type="submit" value="Créer"/>
 
-			<input type="button" value="Annuler" onclick='location.href="Index.jsp"'/>
+			<input type="button" value="Annuler" onclick='location.href="ServletConnexion.java"'/>
 		</div>
 	</p>
 		
