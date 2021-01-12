@@ -131,6 +131,7 @@ private void validerCodePostal(Utilisateur utilisateur, BusinessException busine
 			businessException.ajouterErreur(CodesResultatBLL.REGLE_UTILISATEUR_DESCRIPTION_ERREUR);
 		}
 	}
+
 	
 	public Utilisateur authentifier(String pseudo, String password) {
 		// TODO recupérer l'utilisateur par pseudo
