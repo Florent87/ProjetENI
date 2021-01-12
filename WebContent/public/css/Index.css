@@ -4,7 +4,7 @@ body{
 	background-color: azure
 }
 
-H1 {
+h1 {
 	text-align:center
 }
 
@@ -12,3 +12,16 @@ H1 {
 	float: right;
 	min-width: 250px
 }
+
+#header-ENI{
+    color:black;
+    text-shadow: 4px 4px 6px black
+}
+
+#photo{
+
+	width: 110px;
+    padding-left: 5px;
+}
+
+
