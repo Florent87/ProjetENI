@@ -23,6 +23,7 @@ label {
 		Utilisateur membre = (Utilisateur)session.getAttribute("utilisateur");
 		if(membre!=null)
 		{
+			// redirection vers la page d'accueil si utilisateur en session
 			getServletContext().getRequestDispatcher("/SevletIndex").forward(request, response);
 		} 
 	%>

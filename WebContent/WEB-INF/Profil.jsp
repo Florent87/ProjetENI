@@ -92,7 +92,7 @@
 		<div>
 			<input type="submit" value="Créer"/>
 
-			<input type="button" value="Annuler" onclick='location.href="ServletConnexion.java"'/>
+			<input type="button" value="Annuler" onclick="window.location.href='${pageContext.request.contextPath}/SevletIndex';"/>
 		</div>
 	</p>
 		
