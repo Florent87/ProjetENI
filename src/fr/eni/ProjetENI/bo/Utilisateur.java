@@ -21,9 +21,10 @@ public class Utilisateur {
 	
 	private ArticleVendu articleVendu;
 	
+	public Utilisateur() {}
 	
-
-	
+	public Utilisateur(String pseudo, String motDePasse) {		
+	}
 	
 	public Utilisateur(String pseudo, String nom, String prenom, String email, String telephone, String rue,
 			int codePostal, String ville, String motDePasse, String confirmation) {
@@ -39,23 +40,7 @@ public class Utilisateur {
 		this.motDePasse = motDePasse;
 		this.confirmation = confirmation;
 	}
-
-
 	
-
-	public Utilisateur(String pseudo, String motDePasse) {
-		
-	}
-
-
-
-	public Utilisateur() {
-		// TODO Auto-generated constructor stub
-	}
-
-
-
-
 	public int getNoUtilisateur() {
 		return noUtilisateur;
 	}

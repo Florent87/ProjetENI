@@ -11,11 +11,7 @@
 <meta charset="UTF-8">
 <link href="${pageContext.request.contextPath}/public/css/connexion.css" rel="stylesheet" />
 <title>Page de connexion</title>
-<style type="text/css">
-label {
-	width: 100px;
-	display: inline-block;
-}
+
 </style>
 </head>
 <body>
@@ -23,7 +19,7 @@ label {
 		Utilisateur membre = (Utilisateur)session.getAttribute("utilisateur");
 		if(membre!=null)
 		{
-			// redirection vers la page d'accueil si utilisateur en session
+			// redirection vers la page d'accueil si aucun utilisateur en session
 			getServletContext().getRequestDispatcher("/SevletIndex").forward(request, response);
 		} 
 	%>

@@ -136,7 +136,7 @@ private void validerCodePostal(Utilisateur utilisateur, BusinessException busine
 	public Utilisateur authentifier(String pseudo, String password) {
 		// TODO recupérer l'utilisateur par pseudo
 		//this.utilisateurDAO.		
-		return new Utilisateur();
+		return new Utilisateur("OmSim", "Simpson", "Omer", "omer.simpson@springfield.com", "0464571238", "Route nucléaire", 83380, "Noname", "simpson", "simpson");
 	}
 	
 }

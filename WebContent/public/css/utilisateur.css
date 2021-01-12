@@ -1,0 +1,15 @@
+body{
+	background-color: azure;
+}
+label{
+	width: 100px;
+	display: inline-block;
+}
+label.data{
+	width: auto;
+	display: inline-block;
+}
+button{
+	display: block;
+	margin-top: 20px;
+}
