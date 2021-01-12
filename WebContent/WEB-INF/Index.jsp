@@ -8,6 +8,7 @@
 
 <!DOCTYPE html>
 <html>
+<link href="${pageContext.request.contextPath}/public/css/bootstrap.min.css" rel="stylesheet" />
 <link href="${pageContext.request.contextPath}/public/css/Index.css" rel="stylesheet" />
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -15,7 +16,10 @@
 </head>
 
 <body>
-<div>ENI-ENCHERES</div>
+<div id="header-ENI">ENI-ENCHERES</div>
+<div id= "logo">
+<img src="public/css/image/download.jpg" alt="dessin enchere">
+</div>
 	<%
 		Utilisateur membre = (Utilisateur)session.getAttribute("utilisateur");
 		if(membre!=null)
@@ -32,6 +36,7 @@
 
 
 <h1>Liste des enchères</h1>
+
 
 <%
 		Utilisateur utilisateur = (Utilisateur)request.getAttribute("utilisateur");
@@ -60,27 +65,27 @@
 		}
 	%>
 
- <div class="form-label">
-                <label for="fld-name">Filtres : </label>
-                </div>
-                <div class="form-field">
-                    <input id="fld-name" type="text" class="fld-field" required="required" placeholder="le nom de l'article contient ?"/>
-                </div>
+ 
 
-<div class="form-label">
-                <label for="fld-categorie">Catégories : </label>
-                </div>
-<div class="form-field">
-                <select id="fld-categorie" size="1" class="fld-field">
-			    <optgroup label="Toutes:">
-				<option>Informatique</option>
-				<option>Ameublement</option>
-				<option>Vêtement</option>
-				<option>Sport & Loisirs</option>
-				<input type="submit">
-				</select>
-					
-                </div>
+<div class="mb-3">
+    <label for="filtre" class="form-label">Filtres :</label>
+    <input type="filtre" class="form-control" id="filtre" placeholder="le nom de l'article contient ?">
+  </div>
+</div>       
+  <div class="input-group mb-3">
+  <select class="form-select" id="inputGroupSelect02">
+    <option selected>Catégorie: </option>
+    <option value="1">Informatique</option>
+    <option value="2">Vêtement</option>
+    <option value="3">Ameublement</option>
+    <option value="3">Sport & Loisirs</option>
+  </select>
+  <label class="input-group-text" for="inputGroupSelect02">Valider</label>
+</div>
+</div>
+  
+</div>
+                
 
 </body>
 </html>
