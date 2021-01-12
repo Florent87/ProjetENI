@@ -9,7 +9,7 @@
 <head>
 <meta charset="UTF-8">
 <link href="${pageContext.request.contextPath}/public/css/utilisateur.css" rel="stylesheet" />
-<title>Insert title here</title>
+<title>Information utilisateur</title>
 </head>
 <body>
 	<%
