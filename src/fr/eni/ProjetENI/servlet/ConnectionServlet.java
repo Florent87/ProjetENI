@@ -12,12 +12,12 @@ import javax.servlet.http.HttpServletResponse;
 import fr.eni.ProjetENI.bll.UtilisateurManager;
 import fr.eni.ProjetENI.bo.Utilisateur;
 
-@WebServlet("/connexion")
-public class ConnectionServlet extends HttpServlet {
+@WebServlet(name="connexion", urlPatterns= {"/connexion"})
+public class ConnectionServlet extends HttpServlet{
 	private static final long serialVersionUID = 1L;
       
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/Connexion.jsp");
+		RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/connexion1.jsp");
 		rd.forward(request, response);
 	}
 
@@ -48,7 +48,7 @@ public class ConnectionServlet extends HttpServlet {
 		} else {
 			
 			// Si l'utilisateur n'est pas identifi� il reste sur la page de connexion
-			RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/Connexion.jsp");
+			RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/connexion1.jsp");
 			rd.forward(request, response);
 			
 		}
