@@ -24,7 +24,13 @@
 		if(membre!=null)
 		{
 	%>
-		<div id="header-user"><a href="${pageContext.request.contextPath}/deconnexion"> Se déconnecter</a></div>	
+	<div id="header-user">
+			<ul>
+				<li><a href="${pageContext.request.contextPath}/vente">Vendre un article</a></li>
+				<li><a href="${pageContext.request.contextPath}/utilisateur">Mon profil</a></li>
+				<li><a href="${pageContext.request.contextPath}/deconnexion">Déconnexion</a></li>
+			</ul>
+		</div>	
 	<%	
 		} else {
 	%>	
