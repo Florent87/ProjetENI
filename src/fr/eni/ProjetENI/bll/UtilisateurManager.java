@@ -136,12 +136,11 @@ private void validerCodePostal(Utilisateur utilisateur, BusinessException busine
 	public Utilisateur authentifier(String pseudo, String motDePasse) throws BusinessException 
 	{   Utilisateur utilisateur = null;
 	    try {
-	    	if(utilisateurDAO.authentifier(pseudo, motDePasse) ==null) 
 			utilisateur = utilisateurDAO.authentifier(pseudo, motDePasse);
-		} catch (BusinessException e) {
-		
-			throw new BusinessException("l'utilisateur n'existe pas");
+		} catch (BusinessException e) {		
+			throw new BusinessException("Erreur lors de la vérification de l'utilisateur", e);
 		}
+	    if(utilisateurDAO.authentifier(pseudo, motDePasse) ==null) throw new BusinessException("l'utilisateur n'existe pas");
 		return utilisateur;
 		
 		
