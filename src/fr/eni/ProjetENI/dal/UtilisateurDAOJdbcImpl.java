@@ -14,10 +14,11 @@ public class UtilisateurDAOJdbcImpl implements UtilisateurDAO {
     private static final String GET_ALL = "SELECT * FROM UTILISATEURS";
     private static final String DELETE = "DELETE FROM UTILISATEURS WHERE no_utilisateur = ?";
     
+    // Ajout d'un nouvel utilisateur
 	@Override
 	public void insert(Utilisateur utilisateur) throws BusinessException {
 
-		try (Connection connection = ConnectionProvider.getConnection()){
+		try (Connection connection = ConnectionProvider.getConnection()){	// Récupère une connexion
 			PreparedStatement preparedStatement = connection.prepareStatement(INSERT, PreparedStatement.RETURN_GENERATED_KEYS);
 			preparedStatement.setString(1, utilisateur.getPseudo());
 			preparedStatement.setString(2, utilisateur.getNom());
@@ -44,13 +45,14 @@ public class UtilisateurDAOJdbcImpl implements UtilisateurDAO {
 		
 	}
 
+	// Récupération d'un utilisateur avec son identifiant
 	@Override
 	public Utilisateur getById(int noUtilisateur) throws BusinessException {
 		
 		Utilisateur utilisateur = null;
 
 		try (Connection connection = ConnectionProvider.getConnection()){
-			PreparedStatement preparedStatement = connection.prepareStatement(DELETE);
+			PreparedStatement preparedStatement = connection.prepareStatement(GET_BY_ID);
 			preparedStatement.setInt(1, noUtilisateur);
 			ResultSet response = preparedStatement.executeQuery();
 			

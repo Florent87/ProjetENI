@@ -132,7 +132,7 @@ private void validerCodePostal(Utilisateur utilisateur, BusinessException busine
 		}
 	}
 
-	
+	// Authentification de l'utilisateur avec son pseudo et mot de passe
 	public Utilisateur authentifier(String pseudo, String password) {
 		// TODO recupérer l'utilisateur par pseudo
 		//this.utilisateurDAO.		

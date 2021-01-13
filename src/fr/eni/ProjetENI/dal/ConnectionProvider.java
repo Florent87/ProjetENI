@@ -15,6 +15,7 @@ abstract class ConnectionProvider {
 		Context context;
 		try {
 			context = new InitialContext();
+			// Récupere les information du fichier /WebContent/META-INF/context.xml
 			ConnectionProvider.dataSource = (DataSource) context.lookup("java:comp/env/jdbc/pool_cnx");
 		} catch (NamingException e) {
 			e.printStackTrace();
