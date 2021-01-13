@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import fr.eni.ProjetENI.BusinessException.BusinessException;
 import fr.eni.ProjetENI.bll.UtilisateurManager;
 import fr.eni.ProjetENI.bo.Utilisateur;
 
@@ -34,7 +35,7 @@ public class ConnectionServlet extends HttpServlet {
 			// V�rification de l'utilisateur
 			UtilisateurManager utilisateurManager = new UtilisateurManager();
 			utilisateur = utilisateurManager.authentifier(pseudo, password);
-		} catch (Exception e) {
+		} catch (BusinessException e) {
 			e.printStackTrace();
 		}
 

@@ -45,7 +45,7 @@
 		</header>
 		<form action="connexion" method="post">
 			<label class=label>Pseudo: </label>
-			<input type="text" name="name" value="<%=request.getParameter("pseudo")!=null?request.getParameter("pseudo"):""%>"required/> <br> 
+			<input type="text" name="pseudo" value="<%=request.getParameter("pseudo")!=null?request.getParameter("pseudo"):""%>"required/> <br> 
 			<label>Mot de passe: </label> 
 			<input type="password" name="password"  value="<%=request.getParameter("password")!=null?request.getParameter("password"):""%>"required/> <br> 
 			<input type="submit" value="submit"> 
