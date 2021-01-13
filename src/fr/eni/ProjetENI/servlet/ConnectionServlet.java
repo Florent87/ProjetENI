@@ -26,28 +26,28 @@ public class ConnectionServlet extends HttpServlet {
 		Utilisateur utilisateur = null;
 		boolean connect;
 		try {
-			// Récupération des informations du formulaire de connexion
+			// Rï¿½cupï¿½ration des informations du formulaire de connexion
 			pseudo = request.getParameter("pseudo");
 			password = request.getParameter("password");
 			connect = request.getParameterValues("connect") != null;
 			
-			// Vérification de l'utilisateur
+			// Vï¿½rification de l'utilisateur
 			UtilisateurManager utilisateurManager = new UtilisateurManager();
 			utilisateur = utilisateurManager.authentifier(pseudo, password);
 		} catch (Exception e) {
-			// TODO: handle exception
+			e.printStackTrace();
 		}
 
 		if (utilisateur != null) {
 			
-			// Si l'utilisateur est authentifié on le redirige vers la page d'accueil
+			// Si l'utilisateur est authentifiï¿½ on le redirige vers la page d'accueil
 			request.getSession().setAttribute("utilisateur", utilisateur);
 			RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/Index.jsp");
 			rd.forward(request, response);
 			
 		} else {
 			
-			// Si l'utilisateur n'est pas identifié il reste sur la page de connexion
+			// Si l'utilisateur n'est pas identifiï¿½ il reste sur la page de connexion
 			RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/Connexion.jsp");
 			rd.forward(request, response);
 			
