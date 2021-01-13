@@ -66,7 +66,7 @@
 
  
 
-<div class="mb-3">
+<div id="mb-3" class="mb-3">
     <label for="filtre" class="form-label">Filtres :</label>
     <input type="filtre" class="form-control" id="filtre" placeholder="le nom de l'article contient ?">
   </div>
