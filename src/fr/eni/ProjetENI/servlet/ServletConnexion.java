@@ -43,7 +43,7 @@ public class ServletConnexion extends HttpServlet{
 			
 			// Si l'utilisateur est authentifi� on le redirige vers la page d'accueil
 			request.getSession().setAttribute("utilisateur", utilisateur);
-			RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/Index.jsp");
+			RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/index.jsp");
 			rd.forward(request, response);
 			
 		} else {

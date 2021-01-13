@@ -18,7 +18,7 @@ public class ServletDeconnexion extends HttpServlet {
 		if (request.getSession().getAttribute("utilisateur") != null)
 			request.getSession().removeAttribute("utilisateur");
 		
-		RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/Index.jsp");
+		RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/index.jsp");
 		rd.forward(request, response);
 		
 	}
