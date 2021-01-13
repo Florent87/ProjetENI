@@ -17,9 +17,8 @@
 
 <body>
 <div id="header-ENI">ENI-ENCHERES</div>
-<div id= "logo">
-<img src="public/css/image/download.jpg" alt="dessin enchere">
-</div>
+
+
 	<%
 		Utilisateur membre = (Utilisateur)session.getAttribute("utilisateur");
 		if(membre!=null)
