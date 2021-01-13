@@ -34,7 +34,7 @@
 	<%	
 		} else {
 	%>	
-		<li><a href="${pageContext.request.contextPath}/connexion"> S'inscrire-Se connecter</a></li>
+		<div id="header-user"><a href="${pageContext.request.contextPath}/connexion"> S'inscrire-Se connecter</a></div>
 	<%	
 		} 
 	%>
