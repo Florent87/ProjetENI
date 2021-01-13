@@ -8,7 +8,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link href="${pageContext.request.contextPath}/CSS/Profil.css" rel="stylesheet" />
+<link href="${pageContext.request.contextPath}/public/css/bootstrap.min.css" rel="stylesheet" />
+<link href="${pageContext.request.contextPath}/public/css/Profil.css" rel="stylesheet" />
 
 
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -96,7 +97,82 @@
 		</div>
 	</p>
 		
-
+<form class="row g-6 needs-validation" novalidate>
+  <div class="col-md-6">
+    <label for="validationCustom01" class="form-label">Pseudo</label>
+    <input type="text" class="form-control" id="validationCustom01">
+    <div class="valid-feedback">
+    </div>
+  </div>
+  
+  <div class="col-md-6">
+    <label for="validationCustom02" class="form-label">Nom</label>
+    <input type="text" class="form-control" id="validationCustom02">
+    <div class="valid-feedback">
+    </div>
+  </div>
+  
+ <form class="row g-6 needs-validation" novalidate>
+  <div class="col-md-6">
+    <label for="validationCustom01" class="form-label">Prénom</label>
+    <input type="text" class="form-control" id="validationCustom01">
+    <div class="valid-feedback">
+    </div>
+  </div>
+  
+  <div class="col-md-6">
+    <label for="validationCustom02" class="form-label">E-mail</label>
+    <input type="text" class="form-control" id="validationCustom02">
+    <div class="valid-feedback">
+    </div>
+  </div>
+  
+  <div class="col-md-6">
+    <label for="validationCustom01" class="form-label">Téléphone</label>
+    <input type="text" class="form-control" id="validationCustom01">
+    <div class="valid-feedback">
+    </div>
+  </div>
+  
+  <div class="col-md-6">
+    <label for="validationCustom02" class="form-label">Rue</label>
+    <input type="text" class="form-control" id="validationCustom02">
+    <div class="valid-feedback">
+    </div>
+    </div>
+    
+ <div class="col-md-6">
+    <label for="validationCustom01" class="form-label">Code Postal</label>
+    <input type="text" class="form-control" id="validationCustom01">
+    <div class="valid-feedback">
+    </div>
+  </div>
+  
+  <div class="col-md-6">
+    <label for="validationCustom02" class="form-label">Ville</label>
+    <input type="text" class="form-control" id="validationCustom02">
+    <div class="valid-feedback">
+    </div>
+    </div>
+ 
+  <div class="col-md-6">
+    <label for="validationCustom01" class="form-label">Mot de passe</label>
+    <input type="text" class="form-control" id="validationCustom01">
+    <div class="valid-feedback">
+    </div>
+  </div>
+  
+  <div class="col-md-6">
+    <label for="validationCustom02" class="form-label">Confirmation</label>
+    <input type="text" class="form-control" id="validationCustom02">
+    <div class="valid-feedback">
+    </div>
+    </div>
+ 
+ 
+  </div>
+  
+</form>
 	
 </form> 
 
