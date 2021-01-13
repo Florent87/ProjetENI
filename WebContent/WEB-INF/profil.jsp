@@ -37,144 +37,90 @@
 		}
 	%>
 
-<h1>Mon profil</h1>
-
-
-	<p>
-		<div> 
-		<link href="${pageContext.request.contextPath}/CSS/Profil.css" rel="stylesheet" />
-			<label for="pseudo">Pseudo :</label>
-			<input type="text" name="pseudo" id="pseudo" value="<%=listeCodesErreur!=null?request.getParameter("pseudo"):""%>"required/>
-			<label for="nom">Nom :</label>
-			<input type="text" name="nom" id="nom" value="<%=listeCodesErreur!=null?request.getParameter("nom"):""%>"required/>
-		</div>
-	</p>
-	
-	<p>
-		<div>
-			<label for="prenom">Prénom :</label>
-			<input type="text" name="prenom" id="prenom" value="<%=listeCodesErreur!=null?request.getParameter("prenom"):""%>"required/>
-			<label for="email">E-mail :</label>
-			<input type="email" name="email" id="email" value="<%=listeCodesErreur!=null?request.getParameter("email"):""%>"required/>
-		</div>
-	</p>
-	
-	<p>
-		<div>
-			<label for="telephone">Téléphone :</label>
-			<input type="tel" name="telephone" id="telephone" required value="<%=listeCodesErreur!=null?request.getParameter("telephone"):""%>"required/>
-
-			<label for="rue">Rue :</label>
-			<input type="text" name="rue" id="rue" required value="<%=listeCodesErreur!=null?request.getParameter("rue"):""%>"required/>
-		</div>
-	</p>
-	
-	<p>
-		<div>
-			<label for="codePostal">Code postal :</label>
-			<input type="number" name="codePostal" id="codePostal" value="<%=listeCodesErreur!=null?request.getParameter("codePostal"):""%>"required/>
-
-			<label for="ville">Ville :</label>
-			<input type="text" name="ville" id="ville" value="<%=listeCodesErreur!=null?request.getParameter("ville"):""%>"required/>
-		</div>
-	</p>
-	
-	<p>
-		<div>
-			<label for="motDePasse">Mot de passe :</label>
-			<input type="password" name="motDePasse" id="motDePasse" value="<%=listeCodesErreur!=null?request.getParameter("motDepasse"):""%>"required/>
-
-			<label for="Confirmation">Confirmation :</label>
-			<input type="password" name="confirmation" id="confirmation"value="<%=listeCodesErreur!=null?request.getParameter("confirmation"):""%>"required/>
-		</div>
-	</p>
-	
-		<p>
-		<div>
-			<input type="submit" value="Créer"/>
-
-			<input type="button" value="Annuler" onclick="window.location.href='${pageContext.request.contextPath}/SevletIndex';"/>
-		</div>
-	</p>
+<h1>Mon profil</h1>	
 		
 <form class="row g-6 needs-validation" novalidate>
   <div class="col-md-6">
     <label for="validationCustom01" class="form-label">Pseudo</label>
-    <input type="text" class="form-control" id="validationCustom01">
+    <input type="text" class="form-control" id="validationCustom01"value="<%=listeCodesErreur!=null?request.getParameter("Pseudo"):""%>"required/>
     <div class="valid-feedback">
     </div>
   </div>
   
   <div class="col-md-6">
     <label for="validationCustom02" class="form-label">Nom</label>
-    <input type="text" class="form-control" id="validationCustom02">
+    <input type="text" class="form-control" id="validationCustom02"value="<%=listeCodesErreur!=null?request.getParameter("Nom"):""%>"required/>
     <div class="valid-feedback">
     </div>
   </div>
   
- <form class="row g-6 needs-validation" novalidate>
+ 
   <div class="col-md-6">
     <label for="validationCustom01" class="form-label">Prénom</label>
-    <input type="text" class="form-control" id="validationCustom01">
+    <input type="text" class="form-control" id="validationCustom01"value="<%=listeCodesErreur!=null?request.getParameter("Prénom"):""%>"required/>
     <div class="valid-feedback">
     </div>
   </div>
   
   <div class="col-md-6">
     <label for="validationCustom02" class="form-label">E-mail</label>
-    <input type="text" class="form-control" id="validationCustom02">
+    <input type="text" class="form-control" id="validationCustom02"value="<%=listeCodesErreur!=null?request.getParameter("E-mail"):""%>"required/>
     <div class="valid-feedback">
     </div>
   </div>
   
   <div class="col-md-6">
     <label for="validationCustom01" class="form-label">Téléphone</label>
-    <input type="text" class="form-control" id="validationCustom01">
+    <input type="text" class="form-control" id="validationCustom01"value="<%=listeCodesErreur!=null?request.getParameter("Téléphone"):""%>"required/>
     <div class="valid-feedback">
     </div>
   </div>
   
   <div class="col-md-6">
     <label for="validationCustom02" class="form-label">Rue</label>
-    <input type="text" class="form-control" id="validationCustom02">
+    <input type="text" class="form-control" id="validationCustom02"value="<%=listeCodesErreur!=null?request.getParameter("Rue"):""%>"required/>
     <div class="valid-feedback">
     </div>
     </div>
     
  <div class="col-md-6">
     <label for="validationCustom01" class="form-label">Code Postal</label>
-    <input type="text" class="form-control" id="validationCustom01">
+    <input type="text" class="form-control" id="validationCustom01"value="<%=listeCodesErreur!=null?request.getParameter("Code Postal"):""%>"required/>
     <div class="valid-feedback">
     </div>
   </div>
   
   <div class="col-md-6">
     <label for="validationCustom02" class="form-label">Ville</label>
-    <input type="text" class="form-control" id="validationCustom02">
+    <input type="text" class="form-control" id="validationCustom02"value="<%=listeCodesErreur!=null?request.getParameter("Ville"):""%>"required/>
     <div class="valid-feedback">
     </div>
     </div>
  
   <div class="col-md-6">
     <label for="validationCustom01" class="form-label">Mot de passe</label>
-    <input type="text" class="form-control" id="validationCustom01">
+    <input type="text" class="form-control" id="validationCustom01"value="<%=listeCodesErreur!=null?request.getParameter("Mot de passe"):""%>"required/>
     <div class="valid-feedback">
     </div>
   </div>
   
   <div class="col-md-6">
     <label for="validationCustom02" class="form-label">Confirmation</label>
-    <input type="text" class="form-control" id="validationCustom02">
+    <input type="text" class="form-control" id="validationCustom02"value="<%=listeCodesErreur!=null?request.getParameter("Confirmation"):""%>"required/>
     <div class="valid-feedback">
     </div>
     </div>
- 
- 
-  </div>
   
+  <p>
+		<div>
+			<input type="submit" value="Créer"/>
+
+			<input type="button" value="Annuler" onclick="window.location.href='${pageContext.request.contextPath}/SevletIndex';"/>
+		</div>
+	</p>
 </form>
 	
-</form> 
+
 
 </body>
 </html>
