@@ -14,8 +14,8 @@ public class ServletUtilisateur extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// Affiche la page d'information de l'utilisateur connecté
-		RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/Utilisateur.jsp");
+		// Affiche la page d'information de l'utilisateur connectï¿½
+		RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/utilisateur.jsp");
 		rd.forward(request, response);
 	}
 

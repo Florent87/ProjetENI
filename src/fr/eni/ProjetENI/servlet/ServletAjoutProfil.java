@@ -25,7 +25,7 @@ public class ServletAjoutProfil extends HttpServlet {
        
    
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/Profil.jsp");
+		RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/profil.jsp");
 		rd.forward(request, response);
 	}
 
@@ -64,7 +64,7 @@ public class ServletAjoutProfil extends HttpServlet {
 		{
 			e.printStackTrace();
 			List<Integer> listeCodesErreur=new ArrayList<>();
-			listeCodesErreur.add(CodesResultatServlets.FORMAT_AVIS_NOTE_ERREUR);
+			listeCodesErreur.add(ServletCodesResultat.FORMAT_AVIS_NOTE_ERREUR);
 			request.setAttribute("listeCodesErreur",listeCodesErreur);
 		} catch (BusinessException e) {
 			request.setAttribute("listeCodesErreur", e.getListeCodesErreur());

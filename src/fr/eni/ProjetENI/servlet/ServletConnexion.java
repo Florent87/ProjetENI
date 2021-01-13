@@ -14,7 +14,7 @@ import fr.eni.ProjetENI.bll.UtilisateurManager;
 import fr.eni.ProjetENI.bo.Utilisateur;
 
 @WebServlet(name="connexion", urlPatterns= {"/connexion"})
-public class ConnectionServlet extends HttpServlet{
+public class ServletConnexion extends HttpServlet{
 	private static final long serialVersionUID = 1L;
       
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
