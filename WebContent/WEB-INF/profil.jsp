@@ -37,7 +37,7 @@
 
 <h1>Mon profil</h1>	
 		
-<form class="row g-10 needs-validation" no validate 
+<form class="row g-10 needs-validation" validate 
 method= "post">
   <div class="col-md-6">
     <label for="pseudo" class="form-label">Pseudo</label>
