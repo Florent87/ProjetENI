@@ -37,18 +37,17 @@
 
 <h1>Mon profil</h1>	
 		
-<form class="row g-10 needs-validation" validate 
-method= "post">
+<form class="row g-10 needs-validation"method= "post">
   <div class="col-md-6">
     <label for="pseudo" class="form-label">Pseudo</label>
-    <input type="text" class="form-control" id="pseudo"value="<%=listeCodesErreur!=null?request.getParameter("Pseudo"):""%>"required/>
+    <input type="text" class="form-control"  name="pseudo" id="pseudo"value="<%=listeCodesErreur!=null?request.getParameter("Pseudo"):""%>"required/>
     <div class="valid-feedback">
     </div>
   </div>
   
   <div class="col-md-6">
     <label for="nom" class="form-label">Nom</label>
-    <input type="text" class="form-control" id="nom"value="<%=listeCodesErreur!=null?request.getParameter("Nom"):""%>"required/>
+    <input type="text" class="form-control"  name="nom" id="nom"value="<%=listeCodesErreur!=null?request.getParameter("Nom"):""%>"required/>
     <div class="valid-feedback">
     </div>
   </div>
@@ -56,59 +55,59 @@ method= "post">
  
   <div class="col-md-6">
     <label for="prenom" class="form-label">Prénom</label>
-    <input type="text" class="form-control" id="prenom"value="<%=listeCodesErreur!=null?request.getParameter("Prénom"):""%>"required/>
+    <input type="text" class="form-control" name="prenom" id="prenom"value="<%=listeCodesErreur!=null?request.getParameter("Prénom"):""%>"required/>
     <div class="valid-feedback">
     </div>
   </div>
   
   <div class="col-md-6">
     <label for="email" class="form-label">E-mail</label>
-    <input type="text" class="form-control" id="email"value="<%=listeCodesErreur!=null?request.getParameter("E-mail"):""%>"required/>
+    <input type="text" class="form-control" name="email" id="email"value="<%=listeCodesErreur!=null?request.getParameter("E-mail"):""%>"required/>
     <div class="valid-feedback">
     </div>
   </div>
   
   <div class="col-md-6">
     <label for="telephone" class="form-label">Téléphone</label>
-    <input type="text" class="form-control" id="telephone"value="<%=listeCodesErreur!=null?request.getParameter("Téléphone"):""%>"required/>
+    <input type="text" class="form-control"  name="telephone" id="telephone"value="<%=listeCodesErreur!=null?request.getParameter("Téléphone"):""%>"required/>
     <div class="valid-feedback">
     </div>
   </div>
   
   <div class="col-md-6">
     <label for="rue" class="form-label">Rue</label>
-    <input type="text" class="form-control" id="rue"value="<%=listeCodesErreur!=null?request.getParameter("Rue"):""%>"required/>
+    <input type="text" class="form-control"  name="rue"id="rue"value="<%=listeCodesErreur!=null?request.getParameter("Rue"):""%>"required/>
     <div class="valid-feedback">
     </div>
     </div>
     
  <div class="col-md-6">
     <label for="codePostal" class="form-label">Code Postal</label>
-    <input type="text" class="form-control" id="codePostal"value="<%=listeCodesErreur!=null?request.getParameter("Code Postal"):""%>"required/>
+    <input type="text" class="form-control"  name="codePostal" id="codePostal"value="<%=listeCodesErreur!=null?request.getParameter("Code Postal"):""%>"required/>
     <div class="valid-feedback">
     </div>
   </div>
   
   <div class="col-md-6">
     <label for="ville" class="form-label">Ville</label>
-    <input type="text" class="form-control" id="ville"value="<%=listeCodesErreur!=null?request.getParameter("Ville"):""%>"required/>
+    <input type="text" class="form-control" name="ville" id="ville"value="<%=listeCodesErreur!=null?request.getParameter("Ville"):""%>"required/>
     <div class="valid-feedback">
     </div>
     </div>
  
   <div class="col-md-6">
     <label for="motDePasse" class="form-label">Mot de passe</label>
-    <input type="password" class="form-control" id="motDePasse"value="<%=listeCodesErreur!=null?request.getParameter("Mot de passe"):""%>"required/>
+    <input type="password" class="form-control" name="motDePasse" id="motDePasse"value="<%=listeCodesErreur!=null?request.getParameter("Mot de passe"):""%>"required/>
     <div class="valid-feedback">
     </div>
   </div>
   
   <div class="col-md-6">
     <label for="confirmation" class="form-label">Confirmation</label>
-    <input type="password" class="form-control" id="confirmation"value="<%=listeCodesErreur!=null?request.getParameter("Confirmation"):""%>"required/>
+    <input type="password" class="form-control"  name="confirmation" id="confirmation"value="<%=listeCodesErreur!=null?request.getParameter("Confirmation"):""%>"required/>
     <div class="valid-feedback">
     </div>
-    </div><br>
+    </div>
   
   <p>
 		<div>
