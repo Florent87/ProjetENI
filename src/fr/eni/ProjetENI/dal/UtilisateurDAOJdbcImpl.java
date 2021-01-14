@@ -14,6 +14,7 @@ public class UtilisateurDAOJdbcImpl implements UtilisateurDAO {
     private static final String GET_ALL = "SELECT * FROM UTILISATEURS";
     private static final String DELETE = "DELETE FROM UTILISATEURS WHERE no_utilisateur = ?";
     private static final String GET_UTILISATEUR = "SELECT * FROM UTILISATEURS WHERE pseudo = ? AND mot_de_passe = ? ";
+    private static final String VERIFIER_UNICITE = "SELECT * FROM UTILISATEURS WHERE email = ? AND pseudo = ? ";
     // Ajout d'un nouvel utilisateur
 	@Override
 	public void insert(Utilisateur utilisateur) throws BusinessException {
@@ -109,10 +110,48 @@ public class UtilisateurDAOJdbcImpl implements UtilisateurDAO {
 		
 		} catch (Exception e) {
 			e.printStackTrace();
-			BusinessException businessException = new BusinessException("Erreur authentification utilisateur");
+			BusinessException businessException = new BusinessException("Erreur création utilisateur");
 			throw businessException;
 		}
 		return utilisateur;
+	}
+
+	@Override
+	public boolean verifier(String email, String pseudo) throws BusinessException {
+Utilisateur utilisateur = null;
+boolean exist = false;
+		
+		try (Connection connection = ConnectionProvider.getConnection()){
+			PreparedStatement preparedStatement = connection.prepareStatement(VERIFIER_UNICITE);
+			preparedStatement.setString(1, email);
+			preparedStatement.setString(2, pseudo);
+			
+			ResultSet response = preparedStatement.executeQuery();
+			
+			if(response.next()) {
+				utilisateur = new Utilisateur();
+				utilisateur.setNoUtilisateur(response.getInt("no_utilisateur"));
+				utilisateur.setPseudo(response.getString("pseudo"));
+				utilisateur.setNom(response.getString("nom"));
+				utilisateur.setPrenom(response.getString("prenom"));
+				utilisateur.setEmail(response.getString("email"));
+				utilisateur.setTelephone(response.getString("telephone"));
+				utilisateur.setRue(response.getString("rue"));
+				utilisateur.setCodePostal(response.getInt("code_postal"));
+				utilisateur.setVille(response.getString("ville"));
+				utilisateur.setMotDePasse(response.getString("mot_de_passe"));
+				utilisateur.setCredit(response.getInt("credit"));
+				utilisateur.setAdministrateur(response.getString("administrateur"));
+				exist=true;
+			}
+		
+		} catch (Exception e) {
+			e.printStackTrace();
+			BusinessException businessException = new BusinessException("Ce pseudo ou cet adresse email existe déjà, veuillez les modifiés");
+			throw businessException;
+		}
+		return exist;
+		
 	}
 
 		

@@ -74,6 +74,7 @@ public class UtilisateurManager {
 		{
 			businessException.ajouterErreur(CodesResultatBLL.REGLE_UTILISATEUR_DESCRIPTION_ERREUR);
 		}
+		
 	}
 
 	private void validerEmail(Utilisateur utilisateur, BusinessException businessException)
@@ -138,16 +139,19 @@ private void validerCodePostal(Utilisateur utilisateur, BusinessException busine
 	    try {
 			utilisateur = utilisateurDAO.authentifier(pseudo, motDePasse);
 		} catch (BusinessException e) {		
-			throw new BusinessException("Erreur lors de la v�rification de l'utilisateur", e);
+			throw new BusinessException("Erreur lors de la v�rification de l'utilisateur", e);
 		}
-	    if(utilisateurDAO.authentifier(pseudo, motDePasse) ==null) {
-	    	BusinessException exception = new BusinessException();
-	    	exception.ajouterErreur(CodesResultatBLL.REGLE_UTILISATEUR_DESCRIPTION_ERREUR);
-	    	//throw new BusinessException("l'utilisateur n'existe pas");
-	    }
-		return utilisateur;
+	    if(utilisateurDAO.authentifier(pseudo, motDePasse) ==null) throw new BusinessException("l'utilisateur n'existe pas");
+		return utilisateur; 
 		
 		
 	}
 	
+	public boolean verifierUnicite(String pseudo, String email) throws BusinessException  {
+		Utilisateur utilisateur = null;
+		
+		    if(utilisateurDAO.verifier(pseudo, email) == true) throw new BusinessException("Le pseudo ou l'email existe déjà");
+			return true; 
+				
+	}
 }
