@@ -37,74 +37,74 @@
 
 <h1>Mon profil</h1>	
 		
-<form class="row g-6 needs-validation" novalidate>
+<form class="row g-10 needs-validation" validate>
   <div class="col-md-6">
-    <label for="validationCustom01" class="form-label">Pseudo</label>
-    <input type="text" class="form-control" id="validationCustom01"value="<%=listeCodesErreur!=null?request.getParameter("Pseudo"):""%>"required/>
+    <label for="pseudo" class="form-label">Pseudo</label>
+    <input type="text" class="form-control" id="pseudo"value="<%=listeCodesErreur!=null?request.getParameter("Pseudo"):""%>"required/>
     <div class="valid-feedback">
     </div>
   </div>
   
   <div class="col-md-6">
-    <label for="validationCustom02" class="form-label">Nom</label>
-    <input type="text" class="form-control" id="validationCustom02"value="<%=listeCodesErreur!=null?request.getParameter("Nom"):""%>"required/>
+    <label for="nom" class="form-label">Nom</label>
+    <input type="text" class="form-control" id="nom"value="<%=listeCodesErreur!=null?request.getParameter("Nom"):""%>"required/>
     <div class="valid-feedback">
     </div>
   </div>
   
  
   <div class="col-md-6">
-    <label for="validationCustom01" class="form-label">Prénom</label>
-    <input type="text" class="form-control" id="validationCustom01"value="<%=listeCodesErreur!=null?request.getParameter("Prénom"):""%>"required/>
+    <label for="prenom" class="form-label">Prénom</label>
+    <input type="text" class="form-control" id="prenom"value="<%=listeCodesErreur!=null?request.getParameter("Prénom"):""%>"required/>
     <div class="valid-feedback">
     </div>
   </div>
   
   <div class="col-md-6">
-    <label for="validationCustom02" class="form-label">E-mail</label>
-    <input type="text" class="form-control" id="validationCustom02"value="<%=listeCodesErreur!=null?request.getParameter("E-mail"):""%>"required/>
+    <label for="email" class="form-label">E-mail</label>
+    <input type="text" class="form-control" id="email"value="<%=listeCodesErreur!=null?request.getParameter("E-mail"):""%>"required/>
     <div class="valid-feedback">
     </div>
   </div>
   
   <div class="col-md-6">
-    <label for="validationCustom03" class="form-label">Téléphone</label>
-    <input type="text" class="form-control" id="validationCustom03"value="<%=listeCodesErreur!=null?request.getParameter("Téléphone"):""%>"required/>
+    <label for="telephone" class="form-label">Téléphone</label>
+    <input type="text" class="form-control" id="telephone"value="<%=listeCodesErreur!=null?request.getParameter("Téléphone"):""%>"required/>
     <div class="valid-feedback">
     </div>
   </div>
   
   <div class="col-md-6">
-    <label for="validationCustom04" class="form-label">Rue</label>
-    <input type="text" class="form-control" id="validationCustom04"value="<%=listeCodesErreur!=null?request.getParameter("Rue"):""%>"required/>
+    <label for="rue" class="form-label">Rue</label>
+    <input type="text" class="form-control" id="rue"value="<%=listeCodesErreur!=null?request.getParameter("Rue"):""%>"required/>
     <div class="valid-feedback">
     </div>
     </div>
     
  <div class="col-md-6">
-    <label for="validationCustom05" class="form-label">Code Postal</label>
-    <input type="text" class="form-control" id="validationCustom05"value="<%=listeCodesErreur!=null?request.getParameter("Code Postal"):""%>"required/>
+    <label for="codePostal" class="form-label">Code Postal</label>
+    <input type="text" class="form-control" id="codePostal"value="<%=listeCodesErreur!=null?request.getParameter("Code Postal"):""%>"required/>
     <div class="valid-feedback">
     </div>
   </div>
   
   <div class="col-md-6">
-    <label for="validationCustom06" class="form-label">Ville</label>
-    <input type="text" class="form-control" id="validationCustom06"value="<%=listeCodesErreur!=null?request.getParameter("Ville"):""%>"required/>
+    <label for="ville" class="form-label">Ville</label>
+    <input type="text" class="form-control" id="ville"value="<%=listeCodesErreur!=null?request.getParameter("Ville"):""%>"required/>
     <div class="valid-feedback">
     </div>
     </div>
  
   <div class="col-md-6">
-    <label for="validationCustom07" class="form-label">Mot de passe</label>
-    <input type="password" class="form-control" id="validationCustom07"value="<%=listeCodesErreur!=null?request.getParameter("Mot de passe"):""%>"required/>
+    <label for="motDePasse" class="form-label">Mot de passe</label>
+    <input type="password" class="form-control" id="motDePasse"value="<%=listeCodesErreur!=null?request.getParameter("Mot de passe"):""%>"required/>
     <div class="valid-feedback">
     </div>
   </div>
   
   <div class="col-md-6">
-    <label for="validationCustom08" class="form-label">Confirmation</label>
-    <input type="password" class="form-control" id="validationCustom08"value="<%=listeCodesErreur!=null?request.getParameter("Confirmation"):""%>"required/>
+    <label for="confirmation" class="form-label">Confirmation</label>
+    <input type="password" class="form-control" id="confirmation"value="<%=listeCodesErreur!=null?request.getParameter("Confirmation"):""%>"required/>
     <div class="valid-feedback">
     </div>
     </div>

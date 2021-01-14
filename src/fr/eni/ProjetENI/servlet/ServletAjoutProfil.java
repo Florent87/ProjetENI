@@ -69,7 +69,7 @@ public class ServletAjoutProfil extends HttpServlet {
 		} catch (BusinessException e) {
 			request.setAttribute("listeCodesErreur", e.getListeCodesErreur());
 		}
-		RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/Index.jsp");
+		RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/index.jsp");
 		rd.forward(request, response);
 		
 	}
