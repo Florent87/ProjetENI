@@ -1,6 +1,8 @@
 package fr.eni.ProjetENI.servlet;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -49,6 +51,9 @@ public class ServletConnexion extends HttpServlet{
 		} else {
 			
 			// Si l'utilisateur n'est pas identifi� il reste sur la page de connexion
+			List<Integer> listeCodesErreur=new ArrayList<>();
+			listeCodesErreur.add(ServletCodesResultat.FORMAT_AVIS_NOTE_ERREUR);
+			request.setAttribute("listeCodesErreur",listeCodesErreur);
 			RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/connexion1.jsp");
 			rd.forward(request, response);
 			

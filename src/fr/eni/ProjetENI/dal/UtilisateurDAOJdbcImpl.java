@@ -109,7 +109,7 @@ public class UtilisateurDAOJdbcImpl implements UtilisateurDAO {
 		
 		} catch (Exception e) {
 			e.printStackTrace();
-			BusinessException businessException = new BusinessException("Erreur création utilisateur");
+			BusinessException businessException = new BusinessException("Erreur authentification utilisateur");
 			throw businessException;
 		}
 		return utilisateur;

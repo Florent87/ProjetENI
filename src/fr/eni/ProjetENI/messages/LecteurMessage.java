@@ -33,7 +33,7 @@ private static ResourceBundle rb;
 			}
 			else
 			{
-				message="ProblÃ¨me Ã  la lecture du fichier contenant les messages";
+				message="Problème à la lecture du fichier contenant les messages";
 			}
 		}
 		catch (Exception e) {

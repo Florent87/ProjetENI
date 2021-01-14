@@ -140,7 +140,11 @@ private void validerCodePostal(Utilisateur utilisateur, BusinessException busine
 		} catch (BusinessException e) {		
 			throw new BusinessException("Erreur lors de la vérification de l'utilisateur", e);
 		}
-	    if(utilisateurDAO.authentifier(pseudo, motDePasse) ==null) throw new BusinessException("l'utilisateur n'existe pas");
+	    if(utilisateurDAO.authentifier(pseudo, motDePasse) ==null) {
+	    	BusinessException exception = new BusinessException();
+	    	exception.ajouterErreur(CodesResultatBLL.REGLE_UTILISATEUR_DESCRIPTION_ERREUR);
+	    	//throw new BusinessException("l'utilisateur n'existe pas");
+	    }
 		return utilisateur;
 		
 		

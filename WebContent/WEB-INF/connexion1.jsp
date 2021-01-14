@@ -29,7 +29,7 @@
 		if(listeCodesErreur!=null)
 		{
 	%>
-			<p style="color:red;">Erreur, votre profil n'a pas pu être enregistré dans notre base de donnée :</p>
+			<p style="color:red;">Utilisateur inexistant</p>
 	<%
 			for(int codeErreur:listeCodesErreur)
 			{
