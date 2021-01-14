@@ -37,7 +37,8 @@
 
 <h1>Mon profil</h1>	
 		
-<form class="row g-10 needs-validation" validate>
+<form class="row g-10 needs-validation" no validate 
+method= "post">
   <div class="col-md-6">
     <label for="pseudo" class="form-label">Pseudo</label>
     <input type="text" class="form-control" id="pseudo"value="<%=listeCodesErreur!=null?request.getParameter("Pseudo"):""%>"required/>
@@ -107,7 +108,7 @@
     <input type="password" class="form-control" id="confirmation"value="<%=listeCodesErreur!=null?request.getParameter("Confirmation"):""%>"required/>
     <div class="valid-feedback">
     </div>
-    </div>
+    </div><br>
   
   <p>
 		<div>
@@ -115,7 +116,7 @@
 
 			<input type="button" value="Annuler" onclick="window.location.href='${pageContext.request.contextPath}/SevletIndex';"/>
 		</div>
-	</p>
+  </p>
 </form>
 	
 
