@@ -55,10 +55,19 @@ public class ServletAjoutProfil extends HttpServlet {
 			motDePasse = request.getParameter("motDePasse");
 			confirmation = request.getParameter("confirmation");
 			
+		
 			UtilisateurManager utilisateurManager = new UtilisateurManager();
+			utilisateurManager.verifierUnicite(pseudo, email);
+			
+			if (utilisateurManager.verifierUnicite(pseudo, email) == true) {
+					throw new BusinessException("Le pseudo ou l'email existe déjà");		    
+	 }
+		    else {  				
 			Utilisateur utilisateur = new Utilisateur(pseudo, nom, prenom, email, telephone, rue, codePostale, ville, motDePasse, confirmation);
 			utilisateurManager.ajouter(pseudo, nom, prenom, email, telephone, rue, codePostale, ville, motDePasse, confirmation);
 			request.setAttribute("utilisateur", utilisateur);
+			
+		    }
 		}
 		catch(NumberFormatException e)
 		{
@@ -66,6 +75,7 @@ public class ServletAjoutProfil extends HttpServlet {
 			List<Integer> listeCodesErreur=new ArrayList<>();
 			listeCodesErreur.add(ServletCodesResultat.FORMAT_AVIS_NOTE_ERREUR);
 			request.setAttribute("listeCodesErreur",listeCodesErreur);
+			
 		} catch (BusinessException e) {
 			request.setAttribute("listeCodesErreur", e.getListeCodesErreur());
 		}

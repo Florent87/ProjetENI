@@ -8,7 +8,7 @@ public abstract class ServletCodesResultat {
 	/**
 	 * Format Avis.note incorrect
 	 */
-	public static final int FORMAT_AVIS_NOTE_ERREUR=30000;
+	public static final int FORMAT_CODE_POSTAL_TELEPHONE_ERREUR=30000;
 	
 	
 }

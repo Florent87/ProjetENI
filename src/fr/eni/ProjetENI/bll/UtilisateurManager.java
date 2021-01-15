@@ -144,14 +144,14 @@ private void validerCodePostal(Utilisateur utilisateur, BusinessException busine
 	    if(utilisateurDAO.authentifier(pseudo, motDePasse) ==null) throw new BusinessException("l'utilisateur n'existe pas");
 		return utilisateur; 
 		
-		
 	}
 	
 	public boolean verifierUnicite(String pseudo, String email) throws BusinessException  {
-		Utilisateur utilisateur = null;
 		
-		    if(utilisateurDAO.verifier(pseudo, email) == true) throw new BusinessException("Le pseudo ou l'email existe déjà");
-			return true; 
+		    if (utilisateurDAO.verifier(pseudo, email) == true) {
+			throw new BusinessException("Le pseudo ou l'email existe déjà");		    
+		    }
+		    else return false; 
 				
 	}
 }
