@@ -117,7 +117,7 @@ public class UtilisateurDAOJdbcImpl implements UtilisateurDAO {
 	}
 
 	@Override
-	public boolean verifier(String email, String pseudo) throws BusinessException {
+	public boolean verifier(String email, String pseudo) {
 Utilisateur utilisateur = null;
 boolean exist = false;
 		
@@ -129,30 +129,18 @@ boolean exist = false;
 			ResultSet response = preparedStatement.executeQuery();
 			
 			if(response.next()) {
-				utilisateur = new Utilisateur();
-				utilisateur.setNoUtilisateur(response.getInt("no_utilisateur"));
-				utilisateur.setPseudo(response.getString("pseudo"));
-				utilisateur.setNom(response.getString("nom"));
-				utilisateur.setPrenom(response.getString("prenom"));
-				utilisateur.setEmail(response.getString("email"));
-				utilisateur.setTelephone(response.getString("telephone"));
-				utilisateur.setRue(response.getString("rue"));
-				utilisateur.setCodePostal(response.getInt("code_postal"));
-				utilisateur.setVille(response.getString("ville"));
-				utilisateur.setMotDePasse(response.getString("mot_de_passe"));
-				utilisateur.setCredit(response.getInt("credit"));
-				utilisateur.setAdministrateur(response.getString("administrateur"));
-				exist=true;
+				if(response.getInt("no_utilisateur")>0) {
+					exist = true;
+				}
+				
 			}
-		
 		} catch (Exception e) {
 			e.printStackTrace();
-			BusinessException businessException = new BusinessException("Ce pseudo ou cet adresse email existe déjà, veuillez les modifiés");
-			throw businessException;
+			
 		}
 		return exist;
 		
 	}
-
+	
 		
 }

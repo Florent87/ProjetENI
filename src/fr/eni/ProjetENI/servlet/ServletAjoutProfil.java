@@ -57,7 +57,7 @@ public class ServletAjoutProfil extends HttpServlet {
 			
 		
 			UtilisateurManager utilisateurManager = new UtilisateurManager();
-			utilisateurManager.verifierUnicite(pseudo, email);
+		
 			
 			if (utilisateurManager.verifierUnicite(pseudo, email) == true) {
 					throw new BusinessException("Le pseudo ou l'email existe déjà");		    

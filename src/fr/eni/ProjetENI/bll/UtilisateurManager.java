@@ -79,7 +79,7 @@ public class UtilisateurManager {
 
 	private void validerEmail(Utilisateur utilisateur, BusinessException businessException)
 	{
-		if(utilisateur.getEmail() == null || utilisateur.getEmail().length()>150)
+		if(utilisateur.getEmail() == null || utilisateur.getEmail().length()>20)
 		{
 			businessException.ajouterErreur(CodesResultatBLL.REGLE_UTILISATEUR_DESCRIPTION_ERREUR);
 		}
@@ -145,13 +145,14 @@ private void validerCodePostal(Utilisateur utilisateur, BusinessException busine
 		return utilisateur; 
 		
 	}
-	
-	public boolean verifierUnicite(String pseudo, String email) throws BusinessException  {
-		
-		    if (utilisateurDAO.verifier(pseudo, email) == true) {
-			throw new BusinessException("Le pseudo ou l'email existe déjà");		    
-		    }
-		    else return false; 
-				
+/**	
+ * methode en charge de verifier si l'utilisateur est present en base return vrai si il est present, false sinon
+ * @param pseudo
+ * @param email
+ * @return
+ */
+	public boolean verifierUnicite(String pseudo, String email)   {
+		return utilisateurDAO.verifier(pseudo, email);
+		   
 	}
 }

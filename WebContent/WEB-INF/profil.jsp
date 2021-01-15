@@ -63,14 +63,14 @@
   
   <div class="col-md-6">
     <label for="email" class="form-label">E-mail</label>
-    <input type="text" class="form-control" name="email" id="email"value="<%=listeCodesErreur!=null?request.getParameter("E-mail"):""%>"required/>
+    <input type="email" class="form-control" name="email" id="email"value="<%=listeCodesErreur!=null?request.getParameter("E-mail"):""%>"required/>
     <div class="valid-feedback">
     </div>
   </div>
   
   <div class="col-md-6">
     <label for="telephone" class="form-label">Téléphone</label>
-    <input type="text" class="form-control"  name="telephone" id="telephone"value="<%=listeCodesErreur!=null?request.getParameter("Téléphone"):""%>"required/>
+    <input type="tel" class="form-control" pattern="0[0-9]{9}"  name="telephone" id="telephone"value="<%=listeCodesErreur!=null?request.getParameter("Téléphone"):""%>"required/>
     <div class="valid-feedback">
     </div>
   </div>
@@ -84,7 +84,7 @@
     
  <div class="col-md-6">
     <label for="codePostal" class="form-label">Code Postal</label>
-    <input type="text" class="form-control"  name="codePostal" id="codePostal"value="<%=listeCodesErreur!=null?request.getParameter("Code Postal"):""%>"required/>
+    <input type="text" class="form-control" pattern="[0-9]{5}"  name="codePostal" id="codePostal"value="<%=listeCodesErreur!=null?request.getParameter("Code Postal"):""%>"required/>
     <div class="valid-feedback">
     </div>
   </div>
