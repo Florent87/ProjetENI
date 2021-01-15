@@ -73,7 +73,7 @@ public class ServletAjoutProfil extends HttpServlet {
 		{
 			e.printStackTrace();
 			List<Integer> listeCodesErreur=new ArrayList<>();
-			listeCodesErreur.add(ServletCodesResultat.FORMAT_AVIS_NOTE_ERREUR);
+			listeCodesErreur.add(ServletCodesResultat.FORMAT_CODE_POSTAL_TELEPHONE_ERREUR);
 			request.setAttribute("listeCodesErreur",listeCodesErreur);
 			
 		} catch (BusinessException e) {

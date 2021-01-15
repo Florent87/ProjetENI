@@ -52,7 +52,7 @@ public class ServletConnexion extends HttpServlet{
 			
 			// Si l'utilisateur n'est pas identifi� il reste sur la page de connexion
 			List<Integer> listeCodesErreur=new ArrayList<>();
-			listeCodesErreur.add(ServletCodesResultat.FORMAT_AVIS_NOTE_ERREUR);
+			listeCodesErreur.add(ServletCodesResultat.FORMAT_CODE_POSTAL_TELEPHONE_ERREUR);
 			request.setAttribute("listeCodesErreur",listeCodesErreur);
 			RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/connexion1.jsp");
 			rd.forward(request, response);

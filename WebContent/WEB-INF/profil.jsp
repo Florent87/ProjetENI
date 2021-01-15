@@ -27,8 +27,6 @@
 			<p style="color:red;">Erreur, votre profil n'a pas pu être enregistré dans notre base de donnée :</p>
 	<%
 			for(int codeErreur:listeCodesErreur)
-			
-			if
 				
 			{
 	%>
